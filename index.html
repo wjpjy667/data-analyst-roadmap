@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width,initial-scale=1.0">
-<title>潘嘉毅的就业计划网</title>
+<title>就业计划</title>
 <style>
 :root {
   --bg:#f6f7f9; --card:#fff; --text:#1e293b; --text2:#64748b; --text3:#94a3b8;
@@ -104,22 +104,93 @@ footer{text-align:center;padding:24px;color:var(--text3);font-size:12px;border-t
 <header>
   <div class="header-inner">
     <div class="header-row">
-      <span class="site-name">潘嘉毅的就业计划网</span>
+      <span class="site-name">就业计划</span>
       <span class="header-date" id="headerDate"></span>
     </div>
     <div class="tab-bar">
-      <button class="tab-btn active" id="btn-market" onclick="switchTab('market')">市场洞察</button>
+      <button class="tab-btn active" id="btn-resume" onclick="switchTab('resume')">我的简历</button>
+      <button class="tab-btn" id="btn-market" onclick="switchTab('market')">市场洞察</button>
       <button class="tab-btn" id="btn-learn" onclick="switchTab('learn')">学习计划</button>
       <button class="tab-btn" id="btn-plan" onclick="switchTab('plan')">路线图</button>
-      <button class="tab-btn" id="btn-resume" onclick="switchTab('resume')">我的简历</button>
     </div>
   </div>
 </header>
 
 <main>
 
+<!-- ═══════ 我的简历 ═══════ -->
+<div class="tab-content active" id="tab-content-resume">
+
+  <div class="card">
+    <h3>个人简历</h3>
+    <div style="font-size:13px;line-height:1.8">
+
+      <div style="display:flex;justify-content:space-between;align-items:flex-start;flex-wrap:wrap;gap:12px;margin-bottom:16px">
+        <div>
+          <div style="font-size:20px;font-weight:700;color:var(--text);margin-bottom:6px">潘嘉毅</div>
+          <div style="color:var(--text2);line-height:1.8">
+            福建 · 23岁 · 男 · 共青团员<br>
+            159 8034 6056 · 2835977308@qq.com
+          </div>
+        </div>
+        <div style="text-align:right">
+          <div style="color:var(--accent);font-weight:600">求职意向：数据分析 / 数据运营</div>
+          <div style="color:var(--text2)">目标城市：杭州 · 期望薪资：7-9K</div>
+        </div>
+      </div>
+
+      <div style="margin-bottom:16px">
+        <div style="font-weight:700;font-size:14px;color:var(--accent);border-bottom:1.5px solid var(--accent-light);padding-bottom:4px;margin-bottom:10px">教育背景</div>
+        <div style="display:flex;justify-content:space-between;flex-wrap:wrap"><strong>厦门大学嘉庚学院</strong> · 自动化（本科）</div>
+        <div style="color:var(--text2);font-size:12px;margin-top:4px;line-height:1.7">
+          主修课程：复变函数与积分变换、单片机原理、工程制图、模拟电子技术、数字电子技术、程序设计基础（Python / C / C++）、电路分析、自动控制原理、电力电子技术、PLC编程与应用
+        </div>
+      </div>
+
+      <div style="margin-bottom:16px">
+        <div style="font-weight:700;font-size:14px;color:var(--accent);border-bottom:1.5px solid var(--accent-light);padding-bottom:4px;margin-bottom:10px">技能储备</div>
+        <div style="display:flex;flex-wrap:wrap;gap:8px;margin-bottom:10px">
+          <span class="tag t-green">SQL</span><span class="tag t-green">Excel 数据透视</span><span class="tag t-green">Python 数据分析</span><span class="tag t-blue">Power BI</span><span class="tag t-blue">Protel CAD</span><span class="tag t-blue">PLC 编程</span>
+        </div>
+        <ul style="padding-left:18px;color:var(--text2);font-size:12px;margin:0;line-height:1.8">
+          <li><strong>数据分析工具：</strong>正在系统学习 SQL、Python（Pandas / Matplotlib）、Power BI，能够完成数据提取、清洗、可视化及分析报告输出</li>
+          <li><strong>新媒体运营：</strong>自主运营微信视频号成长类账号，3个月内粉丝 0 → 5000+，单条视频最高播放 20w+，具备数据驱动的增长思维</li>
+          <li><strong>工程软件：</strong>熟练操作 Windows 平台应用软件（Word、Excel），具备 Protel 计算机辅助设计能力</li>
+        </ul>
+      </div>
+
+      <div style="margin-bottom:16px">
+        <div style="font-weight:700;font-size:14px;color:var(--accent);border-bottom:1.5px solid var(--accent-light);padding-bottom:4px;margin-bottom:10px">工作经历</div>
+        <div>
+          <div style="display:flex;justify-content:space-between;flex-wrap:wrap"><strong>厦门新能安科技有限公司</strong> · 设备技术员<span style="color:var(--text2)">2026.01 — 2026.05</span></div>
+          <div style="color:var(--text2);font-size:12px;margin-bottom:6px">ATL 与宁德时代（CATL）合资的中高端锂电池制造商，专注储能、微型车、高功率消费电子三大赛道</div>
+          <ul style="padding-left:18px;color:var(--text2);font-size:12px;margin:6px 0 0 0;line-height:1.8">
+            <li>负责冷压机设备的日常调试与维护，通过参数监控与故障预判保障产线稳定运行，减少非计划停机</li>
+            <li>对接多类别供应商，独立完成设备上电安全检查及 3C 合规校验，确保设备准入标准达标</li>
+            <li>极片生产出现异常时，快速定位根因并完成冷压机参数调试与故障排除，保障生产连续性</li>
+          </ul>
+        </div>
+      </div>
+
+      <div style="margin-bottom:16px">
+        <div style="font-weight:700;font-size:14px;color:var(--accent);border-bottom:1.5px solid var(--accent-light);padding-bottom:4px;margin-bottom:10px">项目经历</div>
+        <div>
+          <div style="font-weight:700">基于 STM32 的智能烟雾报警器开发</div>
+          <ul style="padding-left:18px;color:var(--text2);font-size:12px;margin:6px 0 0 0;line-height:1.8">
+            <li><strong>方案选型：</strong>综合评估引脚资源、功耗与成本，选用 STM32F103 芯片搭载 MQ-2 传感器（烟雾+可燃气体双监测）、高功率蜂鸣器及串口通信模块</li>
+            <li><strong>硬件实现：</strong>独立完成原理图绘制与 PCB 设计，全程跟进元器件采购与焊接调试，主动排查虚焊及引脚错接等硬件隐患</li>
+            <li><strong>系统验证：</strong>设计单模块→集成联调的两阶段测试方案，完成传感器信号采集、蜂鸣器报警响应、串口数据上传三大核心功能的联调优化</li>
+          </ul>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+</div>
+
 <!-- ═══════ 市场洞察 ═══════ -->
-<div class="tab-content active" id="tab-content-market">
+<div class="tab-content" id="tab-content-market">
 
   <div class="metrics">
     <div class="metric"><div class="metric-val">100+</div><div class="metric-label">岗位样本</div></div>
@@ -343,79 +414,6 @@ footer{text-align:center;padding:24px;color:var(--text3);font-size:12px;border-t
 
 </div>
 
-<!-- ═══════ 我的简历 ═══════ -->
-<div class="tab-content" id="tab-content-resume">
-
-  <div class="card">
-    <h3>个人简历</h3>
-    <div style="font-size:13px;line-height:1.8">
-
-      <!-- 基础信息 -->
-      <div style="display:flex;justify-content:space-between;align-items:flex-start;flex-wrap:wrap;gap:12px;margin-bottom:16px">
-        <div>
-          <div style="font-size:20px;font-weight:700;color:var(--text);margin-bottom:6px">潘嘉毅</div>
-          <div style="color:var(--text2);line-height:1.8">
-            福建 · 23岁 · 男 · 共青团员<br>
-            159 8034 6056 · 2835977308@qq.com
-          </div>
-        </div>
-        <div style="text-align:right">
-          <div style="color:var(--accent);font-weight:600">毕业院校：厦门大学嘉庚学院</div>
-          <div style="color:var(--text2)">自动化 · 本科</div>
-        </div>
-      </div>
-
-      <!-- 教育背景 -->
-      <div style="margin-bottom:16px">
-        <div style="font-weight:700;font-size:14px;color:var(--accent);border-bottom:1.5px solid var(--accent-light);padding-bottom:4px;margin-bottom:10px">教育背景</div>
-        <div style="display:flex;justify-content:space-between;flex-wrap:wrap"><strong>厦门大学嘉庚学院</strong> · 自动化（本科）</div>
-        <div style="color:var(--text2);font-size:12px;margin-top:4px;line-height:1.7">
-          主修课程：复变函数与积分变换、单片机原理、工程制图、大学英语、模拟电子技术、数字电子技术、程序设计基础（Python/C/C++）、电路分析、自动控制原理、电力电子技术、PLC编程与应用
-        </div>
-      </div>
-
-      <!-- 技能特长 -->
-      <div style="margin-bottom:16px">
-        <div style="font-weight:700;font-size:14px;color:var(--accent);border-bottom:1.5px solid var(--accent-light);padding-bottom:4px;margin-bottom:10px">技能特长</div>
-        <ul style="padding-left:18px;color:var(--text2);font-size:12px;margin:0;line-height:1.8">
-          <li><strong>技能证书：</strong>protel 计算机辅助设计</li>
-          <li><strong>新媒体运营：</strong>自主运营微信视频号成长类账号，3个月内实现粉丝从 0 到 5000+ 的增长，单条视频最高播放量达 20w+</li>
-          <li><strong>计算机能力：</strong>熟练操作 Windows 平台上的各类应用软件，如 Word、Excel</li>
-        </ul>
-      </div>
-
-      <!-- 项目经历 -->
-      <div style="margin-bottom:16px">
-        <div style="font-weight:700;font-size:14px;color:var(--accent);border-bottom:1.5px solid var(--accent-light);padding-bottom:4px;margin-bottom:10px">项目经历</div>
-        <div style="margin-bottom:8px">
-          <div style="font-weight:700">基于 STM32 的智能烟雾报警器开发项目</div>
-          <ul style="padding-left:18px;color:var(--text2);font-size:12px;margin:6px 0 0 0;line-height:1.8">
-            <li><strong>需求导向选型：</strong>确定核心方案：选用 STM32F103 芯片（平衡引脚资源、功耗与成本），搭配 MQ-2 传感器（双监测烟雾+可燃气体）、高分贝蜂鸣器（适配嘈杂环境）及串口模块（保障数据稳定上传）</li>
-            <li><strong>设计与搭建落地：</strong>完成硬件原理图绘制、PCB 设计，同步推进元器件采购与焊接；主动排查虚焊、引脚错接问题，从源头保障硬件连接可靠性</li>
-            <li><strong>测试与功能验证：</strong>通过单模块测试（传感器信号、蜂鸣器响应、串口通信）与整体联调，实现烟雾采集、异常报警、数据上传三大功能无缝衔接，匹配场景使用需求</li>
-          </ul>
-        </div>
-      </div>
-
-      <!-- 工作经历 -->
-      <div style="margin-bottom:16px">
-        <div style="font-weight:700;font-size:14px;color:var(--accent);border-bottom:1.5px solid var(--accent-light);padding-bottom:4px;margin-bottom:10px">工作经历</div>
-        <div>
-          <div style="display:flex;justify-content:space-between;flex-wrap:wrap"><strong>厦门新能安科技有限公司</strong> · 设备技术员<span style="color:var(--text2)">2026.01 — 2026.05</span></div>
-          <div style="color:var(--text2);font-size:12px;margin-bottom:6px">ATL 与宁德时代（CATL）合资的中高端锂电池制造商，专注储能、微型车、高功率消费电子三大赛道</div>
-          <ul style="padding-left:18px;color:var(--text2);font-size:12px;margin:6px 0 0 0;line-height:1.8">
-            <li>负责冷压机的日常调试与维护，保障产线设备稳定运行</li>
-            <li>对接多类别供应商，完成设备上电安全检查及 3C 合规检查</li>
-            <li>极片生产出现异常时，及时对冷压机进行参数调试与故障排除，确保生产顺利运行</li>
-          </ul>
-        </div>
-      </div>
-
-    </div>
-  </div>
-
-</div>
-
 </main>
 
 <footer>第一份工作是买一张入行的门票，不是去赚钱的。</footer>
@@ -430,7 +428,7 @@ function switchTab(tab){
   localStorage.setItem('activeTab',tab);
 }
 (function(){
-  var t=localStorage.getItem('activeTab')||'market';
+  var t=localStorage.getItem('activeTab')||'resume';
   switchTab(t);
 })();
 
