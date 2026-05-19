@@ -132,7 +132,7 @@ footer{text-align:center;padding:20px;color:var(--gray-500);font-size:12px;borde
 <main>
 
 <!-- ═══════════ TAB 1: 市场洞察 ═══════════ -->
-<div class="tab-content active" id="tab-market">
+<div class="tab-content active" id="tab-content-market">
 
   <div class="stats">
     <div class="stat-card"><div class="stat-num">100+</div><div class="stat-label">岗位样本</div></div>
@@ -223,7 +223,7 @@ footer{text-align:center;padding:20px;color:var(--gray-500);font-size:12px;borde
 </div>
 
 <!-- ═══════════ TAB 2: 学习计划 ═══════════ -->
-<div class="tab-content" id="tab-learn">
+<div class="tab-content" id="tab-content-learn">
 
   <!-- 每日打卡 -->
   <div class="checkin">
@@ -317,7 +317,7 @@ footer{text-align:center;padding:20px;color:var(--gray-500);font-size:12px;borde
 </div>
 
 <!-- ═══════════ TAB 3: 路线图 ═══════════ -->
-<div class="tab-content" id="tab-plan">
+<div class="tab-content" id="tab-content-plan">
 
   <div class="stats">
     <div class="stat-card"><div class="stat-num">3天</div><div class="stat-label">前期调查</div></div>
@@ -381,12 +381,10 @@ footer{text-align:center;padding:20px;color:var(--gray-500);font-size:12px;borde
 function switchTab(tab) {
   document.querySelectorAll('.tab-btn').forEach(b => b.classList.remove('active'));
   document.querySelectorAll('.tab-content').forEach(c => c.classList.remove('active'));
-  document.getElementById('tab-'+tab).classList.add('active');
-  document.getElementById('tab-content-'+tab)?.classList.add('active');
-  // Fix: manually match tab name to content
-  document.querySelectorAll('.tab-content').forEach(function(c){
-    if(c.id === 'tab-'+tab) c.classList.add('active');
-  });
+  var btn = document.getElementById('tab-'+tab);
+  if(btn) btn.classList.add('active');
+  var content = document.getElementById('tab-content-'+tab);
+  if(content) content.classList.add('active');
   localStorage.setItem('activeTab', tab);
 }
 
