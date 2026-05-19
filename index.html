@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width,initial-scale=1.0">
-<title>数据分析师转行计划</title>
+<title>潘嘉毅就业计划网</title>
 <style>
 :root {
   --blue:#2563eb; --blue-dark:#1e40af; --blue-light:#eff6ff;
@@ -11,565 +11,441 @@
   --gray-300:#d1d5db; --gray-500:#6b7280; --gray-700:#374151; --gray-900:#111827;
   --green:#16a34a; --green-light:#f0fdf4; --orange:#ea580c; --orange-light:#fff7ed;
   --red:#dc2626; --red-light:#fef2f2;
-  --radius:12px; --shadow:0 1px 3px rgba(0,0,0,.08);
+  --radius:12px;
 }
 *{margin:0;padding:0;box-sizing:border-box}
-html{scroll-behavior:smooth}
 body{font-family:-apple-system,BlinkMacSystemFont,"Segoe UI","Noto Sans SC",sans-serif;color:var(--gray-900);background:var(--gray-50);line-height:1.6}
 
-header{background:#fff;border-bottom:1px solid var(--gray-200);position:sticky;top:0;z-index:100}
-.header-inner{max-width:960px;margin:0 auto;padding:14px 16px;display:flex;align-items:center;justify-content:space-between}
-.logo{font-size:18px;font-weight:700;color:var(--blue)}
-.menu-btn{width:40px;height:40px;border:none;background:var(--gray-100);border-radius:8px;cursor:pointer;display:flex;align-items:center;justify-content:center}
-.menu-btn span{display:block;width:20px;height:2px;background:var(--gray-700);position:relative;transition:.2s}
-.menu-btn span::before,.menu-btn span::after{content:'';display:block;width:20px;height:2px;background:var(--gray-700);position:absolute;transition:.2s}
-.menu-btn span::before{top:-6px}.menu-btn span::after{top:6px}
-.menu-btn.open span{background:transparent}
-.menu-btn.open span::before{top:0;transform:rotate(45deg)}
-.menu-btn.open span::after{top:0;transform:rotate(-45deg)}
+/* Header */
+header{background:#fff;border-bottom:1px solid var(--gray-200);position:sticky;top:0;z-index:100;padding:12px 16px}
+.header-top{max-width:960px;margin:0 auto;display:flex;justify-content:space-between;align-items:center}
+.site-name{font-size:20px;font-weight:700;color:var(--blue-dark)}
+.header-date{font-size:13px;color:var(--gray-500)}
 
-nav{max-width:960px;margin:0 auto;padding:0 16px;max-height:0;overflow:hidden;transition:max-height .3s}
-nav.open{max-height:600px;padding:0 16px 16px}
-nav a{display:block;padding:12px 16px;color:var(--gray-700);text-decoration:none;font-size:15px;border-radius:8px}
-nav a:active{background:var(--blue-light);color:var(--blue)}
+/* Tab Bar */
+.tab-bar{max-width:960px;margin:0 auto;display:flex;gap:4px;margin-top:10px;background:var(--gray-100);border-radius:10px;padding:3px}
+.tab-btn{flex:1;padding:10px 8px;border:none;background:transparent;border-radius:8px;font-size:14px;font-weight:600;color:var(--gray-500);cursor:pointer;transition:.2s;white-space:nowrap}
+.tab-btn.active{background:#fff;color:var(--blue);box-shadow:0 1px 3px rgba(0,0,0,.08)}
+.tab-btn .tab-icon{font-size:16px;display:block;margin-bottom:1px}
+@media(min-width:640px){.tab-btn{font-size:15px;padding:12px}.tab-btn .tab-icon{display:inline;margin-right:4px}}
 
-main{max-width:960px;margin:0 auto;padding:20px 16px 80px}
+/* Main */
+main{max-width:960px;margin:0 auto;padding:16px}
+.tab-content{display:none}
+.tab-content.active{display:block}
 
-/* Check-in module */
-.checkin{background:#fff;border-radius:var(--radius);box-shadow:var(--shadow);padding:20px;margin-bottom:16px}
-.checkin-header{display:flex;justify-content:space-between;align-items:center;margin-bottom:16px;flex-wrap:wrap;gap:8px}
-.checkin-date{font-size:15px;color:var(--gray-500)}
-.checkin-date strong{color:var(--gray-900);font-size:20px;display:block}
-.checkin-stats{display:flex;gap:12px;align-items:center}
-.checkin-progress{text-align:right}
-.checkin-num{font-size:28px;font-weight:700;color:var(--blue)}
-.checkin-label{font-size:12px;color:var(--gray-500)}
-.checkin-bar{width:120px;height:8px;background:var(--gray-200);border-radius:4px;overflow:hidden}
-.checkin-bar-fill{height:100%;background:var(--green);border-radius:4px;transition:width .3s}
+/* Check-in Module */
+.checkin{background:#fff;border-radius:var(--radius);padding:16px;margin-bottom:16px;box-shadow:0 1px 3px rgba(0,0,0,.06)}
+.checkin-top{display:flex;justify-content:space-between;align-items:center;margin-bottom:12px;flex-wrap:wrap;gap:8px}
+.checkin-progress-row{display:flex;align-items:center;gap:10px}
+.checkin-num{font-size:22px;font-weight:700;color:var(--blue)}
+.checkin-label{font-size:11px;color:var(--gray-500)}
+.checkin-bar{width:80px;height:6px;background:var(--gray-200);border-radius:3px;overflow:hidden}
+.checkin-bar-fill{height:100%;background:var(--green);border-radius:3px;transition:width .3s}
+.checkin-items{display:flex;flex-wrap:wrap;gap:6px}
+.checkin-chip{padding:8px 14px;border-radius:20px;font-size:13px;cursor:pointer;user-select:none;border:2px solid var(--gray-200);background:#fff;transition:all .2s;display:flex;align-items:center;gap:6px;-webkit-tap-highlight-color:transparent}
+.checkin-chip:active{transform:scale(.96)}
+.checkin-chip.done{background:var(--green-light);border-color:#bbf7d0;color:var(--green)}
+.checkin-chip.done::before{content:'✓';font-weight:700;font-size:11px}
+.checkin-reset-btn{font-size:12px;color:var(--gray-500);border:none;background:none;cursor:pointer;text-decoration:underline;margin-top:8px}
 
-.checkin-list{list-style:none;display:flex;flex-direction:column;gap:6px}
-.checkin-item{display:flex;align-items:center;gap:12px;padding:12px 14px;border-radius:10px;cursor:pointer;transition:background .2s;background:var(--gray-50);border:1px solid transparent;user-select:none;-webkit-tap-highlight-color:transparent}
-.checkin-item:active{background:var(--blue-light)}
-.checkin-item.done{background:var(--green-light);border-color:#bbf7d0}
-.checkin-dot{width:24px;height:24px;border-radius:50%;border:2px solid var(--gray-300);flex-shrink:0;display:flex;align-items:center;justify-content:center;transition:all .2s}
-.checkin-item.done .checkin-dot{background:var(--green);border-color:var(--green)}
-.checkin-item.done .checkin-dot::after{content:'✓';color:#fff;font-size:13px;font-weight:700}
-.checkin-text{font-size:14px;color:var(--gray-700);flex:1}
-.checkin-item.done .checkin-text{color:var(--gray-500);text-decoration:line-through}
-.checkin-badge{font-size:11px;padding:2px 8px;border-radius:12px;font-weight:600;color:var(--gray-500);background:var(--gray-200)}
-.checkin-item.done .checkin-badge{color:var(--green);background:#dcfce7}
+/* Stats row */
+.stats{display:grid;grid-template-columns:repeat(3,1fr);gap:8px;margin-bottom:16px}
+.stat-card{background:#fff;border-radius:var(--radius);padding:14px 10px;text-align:center;box-shadow:0 1px 2px rgba(0,0,0,.04)}
+.stat-num{font-size:24px;font-weight:700;color:var(--blue)}
+.stat-label{font-size:11px;color:var(--gray-500);margin-top:2px}
 
-.checkin-reset{text-align:center;margin-top:12px}
-.checkin-reset button{font-size:12px;color:var(--gray-500);border:none;background:none;cursor:pointer;text-decoration:underline}
+/* Cards */
+.card{background:#fff;border-radius:var(--radius);padding:16px;margin-bottom:12px;box-shadow:0 1px 2px rgba(0,0,0,.04)}
+.card h3{font-size:16px;margin-bottom:10px;display:flex;align-items:center;gap:8px}
+.card h3 .icon{font-size:18px}
+.card-subtitle{font-size:13px;color:var(--gray-500);margin-bottom:12px}
 
-/* Card */
-.card{background:#fff;border-radius:var(--radius);box-shadow:var(--shadow);margin-bottom:16px;overflow:hidden}
-.card-header{padding:16px 20px;display:flex;align-items:center;justify-content:space-between;cursor:pointer;user-select:none}
-.card-header h2{font-size:17px;font-weight:600;display:flex;align-items:center;gap:10px}
-.card-header .icon{width:36px;height:36px;border-radius:10px;display:flex;align-items:center;justify-content:center;font-size:20px;flex-shrink:0}
-.card-header .arrow{transition:.3s;color:var(--gray-500)}
-.card.open .card-header .arrow{transform:rotate(180deg)}
-.card-body{padding:0 20px;max-height:0;overflow:hidden;transition:max-height .4s,padding .4s}
-.card.open .card-body{padding:0 20px 20px;max-height:10000px}
-
-/* Table */
-.table-wrap{-webkit-overflow-scrolling:touch;overflow-x:auto;margin:12px 0}
-table{width:100%;border-collapse:collapse;font-size:14px;min-width:500px}
-th{background:var(--blue-light);color:var(--blue-dark);font-weight:600;padding:10px 12px;text-align:left;font-size:12px;letter-spacing:.3px;white-space:nowrap}
-td{padding:10px 12px;border-bottom:1px solid var(--gray-100);vertical-align:top;font-size:13px}
+/* Tables */
+.table-wrap{-webkit-overflow-scrolling:touch;overflow-x:auto;margin:12px -16px;padding:0 16px}
+table{width:100%;border-collapse:collapse;font-size:13px;min-width:500px}
+th{background:var(--blue-light);color:var(--blue-dark);font-weight:600;padding:8px 10px;text-align:left;font-size:11px;letter-spacing:.3px;white-space:nowrap;border-bottom:1px solid var(--gray-200)}
+td{padding:8px 10px;border-bottom:1px solid var(--gray-100);vertical-align:top;font-size:12px}
 tr:last-child td{border-bottom:none}
-@media(max-width:640px){th,td{padding:8px;font-size:12px}}
 
 /* Tags */
-.tag{display:inline-block;padding:2px 10px;border-radius:20px;font-size:11px;font-weight:600;white-space:nowrap}
+.tag{display:inline-block;padding:2px 8px;border-radius:12px;font-size:10px;font-weight:600;white-space:nowrap}
 .tag-blue{background:var(--blue-light);color:var(--blue)}
 .tag-green{background:var(--green-light);color:var(--green)}
 .tag-orange{background:var(--orange-light);color:var(--orange)}
 .tag-red{background:var(--red-light);color:var(--red)}
 
-/* Timeline */
-.timeline{position:relative;padding-left:28px}
-.timeline::before{content:'';position:absolute;left:11px;top:4px;bottom:4px;width:2px;background:var(--gray-200)}
-.tl-item{position:relative;margin-bottom:24px;padding-bottom:0}
-.tl-item:last-child{margin-bottom:0}
-.tl-item::before{content:'';position:absolute;left:-21px;top:5px;width:12px;height:12px;border-radius:50%;border:2px solid var(--blue);background:#fff;flex-shrink:0}
-.tl-item.done::before{background:var(--blue)}
-.tl-period{font-size:12px;color:var(--blue);font-weight:600;margin-bottom:2px;word-break:break-all}
-.tl-title{font-size:15px;font-weight:600;word-break:break-all}
-.tl-desc{font-size:13px;color:var(--gray-500);word-break:break-all;margin-top:2px}
-
-/* Stats */
-.stats{display:grid;grid-template-columns:repeat(auto-fit,minmax(140px,1fr));gap:12px;margin-bottom:20px}
-.stat-card{background:#fff;border-radius:var(--radius);box-shadow:var(--shadow);padding:16px;text-align:center}
-.stat-num{font-size:28px;font-weight:700;color:var(--blue)}
-.stat-label{font-size:12px;color:var(--gray-500);margin-top:4px}
-
 /* Alerts */
-.warn{background:var(--orange-light);border-left:4px solid var(--orange);padding:14px 16px;border-radius:0 var(--radius) var(--radius) 0;margin:16px 0;font-size:14px}
-.warn strong{color:var(--orange)}
-.info{background:var(--blue-light);border-left:4px solid var(--blue);padding:14px 16px;border-radius:0 var(--radius) var(--radius) 0;margin:16px 0;font-size:14px}
+.warn{background:var(--orange-light);border-left:3px solid var(--orange);padding:10px 14px;border-radius:0 8px 8px 0;margin:12px 0;font-size:13px}
+.info{background:var(--blue-light);border-left:3px solid var(--blue);padding:10px 14px;border-radius:0 8px 8px 0;margin:12px 0;font-size:13px}
 
-footer{text-align:center;padding:20px;color:var(--gray-500);font-size:13px;border-top:1px solid var(--gray-200);margin-top:40px}
-.section-title{font-size:22px;font-weight:700;margin:24px 0 4px;color:var(--gray-900)}
-.subtitle{font-size:14px;color:var(--gray-500);margin-bottom:16px}
+/* Timeline */
+.timeline{position:relative;padding-left:24px}
+.timeline::before{content:'';position:absolute;left:9px;top:4px;bottom:4px;width:2px;background:var(--gray-200)}
+.tl-item{position:relative;margin-bottom:20px}
+.tl-item:last-child{margin-bottom:0}
+.tl-item::before{content:'';position:absolute;left:-19px;top:4px;width:10px;height:10px;border-radius:50%;border:2px solid var(--blue);background:#fff}
+.tl-period{font-size:11px;color:var(--blue);font-weight:600;margin-bottom:2px}
+.tl-title{font-size:14px;font-weight:600}
+.tl-desc{font-size:12px;color:var(--gray-500);margin-top:1px}
 
-.phase{display:inline-flex;align-items:center;gap:6px;padding:6px 14px;border-radius:20px;font-size:13px;font-weight:600;margin:16px 0 8px}
-.phase-1{background:#eff6ff;color:#2563eb}
-.phase-2{background:#f0fdf4;color:#16a34a}
-.phase-3{background:#fefce8;color:#ca8a04}
-.phase-4{background:#fdf2f8;color:#db2777}
+/* Phase badges */
+.phase-tag{display:inline-flex;padding:4px 10px;border-radius:12px;font-size:12px;font-weight:600;margin:12px 0 8px}
+.ph1{background:#eff6ff;color:#2563eb}.ph2{background:#f0fdf4;color:#16a34a}
+.ph3{background:#fefce8;color:#ca8a04}.ph4{background:#fdf2f8;color:#db2777}
 
-@media(max-width:480px){
-  .checkin-header{flex-direction:column;align-items:flex-start}
-  .stats{grid-template-columns:repeat(3,1fr)}
-  .stat-num{font-size:22px}
-  .table-wrap{margin:12px -20px;width:calc(100% + 40px)}
+/* Section header */
+.section-header{font-size:18px;font-weight:700;margin-bottom:12px}
+
+footer{text-align:center;padding:20px;color:var(--gray-500);font-size:12px;border-top:1px solid var(--gray-200);margin-top:24px}
+
+@media(min-width:640px){
+  .stats{grid-template-columns:repeat(6,1fr)}
+  main{padding:20px}
+  .card{padding:20px}
+  .table-wrap{margin:12px 0;padding:0}
+  th,td{padding:10px 12px;font-size:13px}
+  td{font-size:13px}
 }
 </style>
 </head>
 <body>
 
 <header>
-  <div class="header-inner">
-    <div class="logo">数据分析师转行计划</div>
-    <button class="menu-btn" id="menuBtn" aria-label="菜单" onclick="toggleMenu()"><span></span></button>
+  <div class="header-top">
+    <span class="site-name">潘嘉毅就业计划网</span>
+    <span class="header-date" id="headerDate"></span>
   </div>
-  <nav id="nav">
-    <a href="#checkin">每日打卡</a>
-    <a href="#stats">进度总览</a>
-    <a href="#market-research">市场调研</a>
-    <a href="#survey">调查方法</a>
-    <a href="#roadmap">学习路线</a>
-    <a href="#apply">面试投递</a>
-    <a href="#infobase">信息根据地</a>
-    <a href="#timeline">完整时间线</a>
-    <a href="#planb">B计划</a>
-    <a href="#jobs">目标岗位</a>
-    <a href="#income">收入预期</a>
-    <a href="#cities">目标城市</a>
-  </nav>
+  <div class="tab-bar">
+    <button class="tab-btn active" onclick="switchTab('market')" id="tab-market">
+      <span class="tab-icon">📊</span>市场洞察
+    </button>
+    <button class="tab-btn" onclick="switchTab('learn')" id="tab-learn">
+      <span class="tab-icon">📚</span>学习计划
+    </button>
+    <button class="tab-btn" onclick="switchTab('plan')" id="tab-plan">
+      <span class="tab-icon">🗺️</span>路线图
+    </button>
+  </div>
 </header>
 
 <main>
 
-  <!-- ══════════ 每日打卡 ══════════ -->
-  <div class="checkin" id="checkin">
-    <div class="checkin-header">
-      <div class="checkin-date">
-        <strong id="dateDisplay">—</strong>
-        <span id="weekdayDisplay">—</span>
-      </div>
-      <div class="checkin-stats">
-        <div class="checkin-progress">
-          <div class="checkin-num" id="doneCount">0/8</div>
-          <div class="checkin-label">今日完成</div>
-        </div>
-        <div class="checkin-bar">
-          <div class="checkin-bar-fill" id="progressBar" style="width:0%"></div>
-        </div>
-      </div>
-    </div>
-    <ul class="checkin-list" id="checkinList"></ul>
-    <div class="checkin-reset"><button onclick="resetCheckin()">重置今日打卡</button></div>
+<!-- ═══════════ TAB 1: 市场洞察 ═══════════ -->
+<div class="tab-content active" id="tab-market">
+
+  <div class="stats">
+    <div class="stat-card"><div class="stat-num">100+</div><div class="stat-label">岗位样本</div></div>
+    <div class="stat-card"><div class="stat-num">SQL</div><div class="stat-label">出现率100%</div></div>
+    <div class="stat-card"><div class="stat-num">60%</div><div class="stat-label">不卡院校</div></div>
+    <div class="stat-card"><div class="stat-num">6-10K</div><div class="stat-label">新人起薪</div></div>
+    <div class="stat-card"><div class="stat-num">电商</div><div class="stat-label">最大市场</div></div>
+    <div class="stat-card"><div class="stat-num">7-9K</div><div class="stat-label">合理预期</div></div>
   </div>
 
-  <!-- ══════════ 进度总览 ══════════ -->
-  <div class="stats" id="stats">
+  <!-- 为什么不做PLC -->
+  <div class="card">
+    <h3>🚫 为什么不做PLC/电气自动化</h3>
+    <div class="table-wrap"><table>
+      <tr><th>对比维度</th><th>PLC / 电气</th><th>数据分析</th><th>结论</th></tr>
+      <tr><td>已验证</td><td>已辞职冷压机维修岗，车间不适合</td><td>办公室为主，正常作息</td><td><span class="tag tag-red">已排除</span></td></tr>
+      <tr><td>天花板</td><td>高级技工→项目经理，10-15K封顶</td><td>资深分析师 20-35K</td><td><span class="tag tag-green">数据胜</span></td></tr>
+      <tr><td>入行收入</td><td>新人 5-8K+出差补贴</td><td>新人 7-12K（杭州）</td><td><span class="tag tag-green">数据胜</span></td></tr>
+      <tr><td>行业趋势</td><td>制造业增长平缓，AI替代</td><td>数字化刚需，持续增长</td><td><span class="tag tag-green">数据胜</span></td></tr>
+      <tr><td>转行成本</td><td>专业对口但已放弃</td><td>23岁零沉没成本，3-4个月转行</td><td><span class="tag tag-blue">时机正好</span></td></tr>
+    </table></div>
+  </div>
+
+  <!-- 市场调研核心数据 -->
+  <div class="card">
+    <h3>📊 杭州市场调研（100+ JD分析·2026年5月）</h3>
+    <p class="card-subtitle">数据来源：BOSS直聘、猎聘、拉勾、前程无忧、智联、牛客、高校就业平台</p>
+
+    <strong style="font-size:14px">技能出现频次</strong>
+    <div class="table-wrap"><table>
+      <tr><th>技能</th><th>出现率</th><th>优先级</th></tr>
+      <tr><td>SQL</td><td>100%</td><td><span class="tag tag-red">最高</span></td></tr>
+      <tr><td>Excel</td><td>95%</td><td><span class="tag tag-red">最高</span></td></tr>
+      <tr><td>Python</td><td>88%</td><td><span class="tag tag-red">最高</span></td></tr>
+      <tr><td>BI工具（Tableau/PowerBI/FineBI）</td><td>82%</td><td><span class="tag tag-red">最高</span></td></tr>
+      <tr><td>Hive/大数据</td><td>55%</td><td><span class="tag tag-orange">第二</span></td></tr>
+      <tr><td>ETL/数仓</td><td>42%</td><td><span class="tag tag-orange">第二</span></td></tr>
+      <tr><td>机器学习</td><td>35%</td><td><span class="tag tag-blue">入行后</span></td></tr>
+    </table></div>
+
+    <strong style="font-size:14px">各方向薪资与门槛</strong>
+    <div class="table-wrap"><table>
+      <tr><th>方向</th><th>新人月薪</th><th>门槛</th><th>适合你？</th></tr>
+      <tr><td>数据运营</td><td>6-10K</td><td>SQL+Excel</td><td><span class="tag tag-green">✅ 最友好</span></td></tr>
+      <tr><td>BI分析师</td><td>8-14K</td><td>SQL+BI工具</td><td><span class="tag tag-green">✅ 友好</span></td></tr>
+      <tr><td>业务数据分析</td><td>8-15K</td><td>SQL+Python+BI</td><td><span class="tag tag-green">✅ 友好</span></td></tr>
+      <tr><td>电商数据分析</td><td>7-12K</td><td>SQL+Excel+行业</td><td><span class="tag tag-green">✅ 友好</span></td></tr>
+      <tr><td>风控数据分析</td><td>10-15K</td><td>SQL+Python+统计</td><td><span class="tag tag-orange">⚠ 偏好硕士</span></td></tr>
+      <tr><td>数据工程</td><td>10.5-15K</td><td>SQL+Python+Hive</td><td><span class="tag tag-orange">⚠ 偏技术</span></td></tr>
+    </table></div>
+
+    <strong style="font-size:14px">学历门槛分布</strong>
+    <div class="table-wrap"><table>
+      <tr><th>要求</th><th>占比</th><th>你的情况</th></tr>
+      <tr><td>本科（不卡院校）</td><td>~60%</td><td><span class="tag tag-green">✅</span></td></tr>
+      <tr><td>985/211优先</td><td>~25%</td><td><span class="tag tag-orange">大厂难，中小无影响</span></td></tr>
+      <tr><td>硕士优先</td><td>~10%</td><td><span class="tag tag-red">暂不投</span></td></tr>
+    </table></div>
+
+    <div class="info"><strong>结论：</strong>民办本科只影响25%岗位，剩下75%不卡学校。SQL+Excel+Python+BI四件套覆盖90%JD。数据运营和BI分析师是最适合你的两个入门岗位。</div>
+  </div>
+
+  <!-- 目标岗位 + 城市 -->
+  <div class="card">
+    <h3>🎯 目标岗位 & 城市</h3>
+    <div class="table-wrap"><table>
+      <tr><th>梯队</th><th>岗位</th><th>城市</th><th>优先级</th></tr>
+      <tr><td><span class="tag tag-green">主投</span></td><td>数据分析师 / 数据运营 / BI分析师</td><td>杭州</td><td>首选</td></tr>
+      <tr><td><span class="tag tag-green">主投</span></td><td>商业分析 / 经营分析 / 数据支持</td><td>杭州</td><td>首选</td></tr>
+      <tr><td><span class="tag tag-blue">备选</span></td><td>同上</td><td>上海</td><td>次选</td></tr>
+      <tr><td><span class="tag tag-blue">备选</span></td><td>同上</td><td>成都</td><td>备选</td></tr>
+    </table></div>
+    <p style="font-size:12px;color:var(--gray-500);margin-top:8px">搜岗位关键词：「数据分析」「SQL」「Python数据」「BI」「数据运营」「Excel」</p>
+  </div>
+
+  <!-- 收入预期 -->
+  <div class="card">
+    <h3>💰 收入预期</h3>
+    <div class="table-wrap"><table>
+      <tr><th>阶段</th><th>时间</th><th>月薪</th><th>核心目标</th></tr>
+      <tr><td>第一份工作</td><td>2026底-2027初</td><td><strong>7-9K</strong></td><td><span class="tag tag-orange">买入行门票</span></td></tr>
+      <tr><td>第一次跳槽</td><td>入职满1年</td><td><strong>10-14K</strong></td><td><span class="tag tag-blue">凭经验跳槽</span></td></tr>
+      <tr><td>资深阶段</td><td>入行3-5年</td><td><strong>20-35K</strong></td><td><span class="tag tag-green">职业上升期</span></td></tr>
+    </table></div>
+    <div class="warn"><strong>第一年KPI不是月薪。</strong>给8K能独立做分析项目 > 给10K天天整Excel。一年后跳槽，简历上写的是项目经历不是薪资数字。</div>
+  </div>
+
+</div>
+
+<!-- ═══════════ TAB 2: 学习计划 ═══════════ -->
+<div class="tab-content" id="tab-learn">
+
+  <!-- 每日打卡 -->
+  <div class="checkin">
+    <div class="checkin-top">
+      <strong style="font-size:15px">今日打卡</strong>
+      <div class="checkin-progress-row">
+        <span class="checkin-num" id="doneCount">0/8</span>
+        <div class="checkin-bar"><div class="checkin-bar-fill" id="progressBar" style="width:0%"></div></div>
+      </div>
+    </div>
+    <div class="checkin-items" id="checkinChips"></div>
+    <button class="checkin-reset-btn" onclick="resetCheckin()">重置今日</button>
+  </div>
+
+  <!-- 第零步 -->
+  <div class="card">
+    <h3>🔍 开始之前：花3天做调查</h3>
+    <div class="table-wrap"><table>
+      <tr><th>#</th><th>任务</th><th>耗时</th></tr>
+      <tr><td>1</td><td>浏览BOSS直聘，阅读杭州100个数据分析JD，标注共性技能要求</td><td>2-3h</td></tr>
+      <tr><td>2</td><td>找出频率最高的5个技能关键词，排优先级</td><td>1h</td></tr>
+      <tr><td>3</td><td>在脉脉/知乎/即刻找3个在职数据分析师，私信问实际工作内容</td><td>2h</td></tr>
+      <tr><td>4</td><td>用调查结果重新审视学习路线，调优先级</td><td>1h</td></tr>
+    </table></div>
+    <div class="warn">不要一上来就学SQL。先搞清楚市场到底要什么。</div>
+  </div>
+
+  <!-- 学习路线 -->
+  <div class="card">
+    <h3>📚 学习路线（学什么就做什么项目）</h3>
+
+    <div class="phase-tag ph1">阶段一 · SQL · 第1-4周</div>
+    <div class="table-wrap"><table>
+      <tr><th>周</th><th>学什么</th><th>本周产出</th></tr>
+      <tr><td>1</td><td>SELECT、WHERE、GROUP BY、HAVING、聚合函数</td><td>SQL查询集 #1：找公开数据集，写10条业务查询</td></tr>
+      <tr><td>2</td><td>多表联查：JOIN全家桶、UNION</td><td>SQL查询集 #2：建3关联表，5条多表联查</td></tr>
+      <tr><td>3</td><td>子查询、CASE WHEN、窗口函数</td><td>SQL查询集 #3：留存SQL、RFM分层SQL</td></tr>
+      <tr><td>4</td><td>综合实战</td><td>SQL分析报告：全流程写2页分析总结</td></tr>
+    </table></div>
+
+    <div class="phase-tag ph2">阶段二 · Excel + BI · 第5-6周</div>
+    <div class="table-wrap"><table>
+      <tr><td>5</td><td>Excel：透视表、VLOOKUP、图表</td><td>Excel分析报告：拿SQL数据做带图表的报告</td></tr>
+      <tr><td>6</td><td>Power BI：数据清洗+看板搭建</td><td>BI看板：完整业务看板含5个以上图表</td></tr>
+    </table></div>
+
+    <div class="phase-tag ph3">阶段三 · Python · 第7-12周</div>
+    <div class="table-wrap"><table>
+      <tr><td>7-8</td><td>Python基础+Pandas核心</td><td>数据处理脚本：读取→清洗→聚合→导出</td></tr>
+      <tr><td>9-10</td><td>Pandas进阶+数据清洗</td><td>Python+SQL联合分析管道</td></tr>
+      <tr><td>11</td><td>Matplotlib+Seaborn可视化</td><td>可视化作品集：10张图+每张结论</td></tr>
+      <tr><td>12</td><td>全流程综合</td><td>端到端分析项目</td></tr>
+    </table></div>
+
+    <div class="phase-tag ph4">阶段四 · 打磨 · 第13-14周</div>
+    <div class="table-wrap"><table>
+      <tr><td>13</td><td>从14+作品中选最好的3个深度打磨</td><td>3个精品项目（PDF报告），放GitHub+语雀</td></tr>
+      <tr><td>14</td><td>简历包装+模拟面试</td><td>突出项目经验的最终简历</td></tr>
+    </table></div>
+  </div>
+
+  <!-- 面试投递 -->
+  <div class="card">
+    <h3>📋 面试投递节奏（不是为了找工作，是获取市场反馈）</h3>
+    <div class="table-wrap"><table>
+      <tr><th>时间</th><th>动作</th><th>目的</th></tr>
+      <tr><td>第2周</td><td>投10份</td><td>测试市场反应</td></tr>
+      <tr><td>第4周</td><td>投10份，更新简历</td><td>根据反馈修正方向</td></tr>
+      <tr><td>第6周</td><td>投15份，调岗位类型</td><td>对比不同岗位反馈</td></tr>
+      <tr><td>第8周</td><td>投15份（加了Python项目）</td><td>看简历变强后反馈</td></tr>
+      <tr><td>第10周</td><td>投15份，主动约面试</td><td>积累真实面试经验</td></tr>
+      <tr><td>第12周</td><td>投15份，集中面试</td><td>面试是免费市场调研</td></tr>
+      <tr><td>第14周+</td><td>集中投递，目标拿offer</td><td>简历已迭代6轮</td></tr>
+    </table></div>
+    <div class="info">被拒了比没人回应好——至少你知道了市场在乎什么。</div>
+  </div>
+
+  <!-- 每日作息 -->
+  <div class="card">
+    <h3>⏰ 每日作息</h3>
+    <div class="table-wrap"><table>
+      <tr><th>时间</th><th>内容</th></tr>
+      <tr><td>09:00-12:00</td><td>上午学习 3h（看课+笔记）</td></tr>
+      <tr><td>14:00-18:00</td><td>下午动手 4h（写代码+做项目）</td></tr>
+      <tr><td>19:30-21:30</td><td>晚间项目+输出 2h（刷题+写文章）</td></tr>
+      <tr><td>23:00</td><td>睡觉（保证7-8小时）</td></tr>
+    </table></div>
+    <p style="font-size:12px;color:var(--gray-500)">每天8小时，周末休息一天。持续14周。</p>
+  </div>
+
+</div>
+
+<!-- ═══════════ TAB 3: 路线图 ═══════════ -->
+<div class="tab-content" id="tab-plan">
+
+  <div class="stats">
     <div class="stat-card"><div class="stat-num">3天</div><div class="stat-label">前期调查</div></div>
     <div class="stat-card"><div class="stat-num">14周</div><div class="stat-label">学习周期</div></div>
     <div class="stat-card"><div class="stat-num">14+</div><div class="stat-label">项目作品</div></div>
-    <div class="stat-card"><div class="stat-num">7次</div><div class="stat-label">市场反馈</div></div>
+    <div class="stat-card"><div class="stat-num">7轮</div><div class="stat-label">面试迭代</div></div>
     <div class="stat-card"><div class="stat-num">6-9月</div><div class="stat-label">预计入行</div></div>
     <div class="stat-card"><div class="stat-num">7-9K</div><div class="stat-label">现实起薪</div></div>
   </div>
 
-  <!-- ══════════ 为什么不走PLC ══════════ -->
-  <div class="card open">
-    <div class="card-header" onclick="toggleCard(this)">
-      <h2><span class="icon" style="background:#fef2f2">🚫</span>为什么不做PLC/电气自动化</h2>
-      <svg class="arrow" width="20" height="20" viewBox="0 0 20 20" fill="currentColor"><path d="M5 7l5 5 5-5" stroke="currentColor" stroke-width="2" fill="none"/></svg>
-    </div>
-    <div class="card-body">
-      <div class="table-wrap"><table>
-        <tr><th>对比维度</th><th>PLC / 电气</th><th>数据分析</th><th>结论</th></tr>
-        <tr><td><strong>已验证</strong></td><td>已辞职冷压机维修岗，车间环境不适合</td><td>办公室为主，正常作息</td><td><span class="tag tag-red">已排除PLC</span></td></tr>
-        <tr><td><strong>天花板</strong></td><td>高级技工→项目经理，10-15K封顶</td><td>资深分析师 20-35K，上不封顶</td><td><span class="tag tag-green">数据胜</span></td></tr>
-        <tr><td><strong>入行收入</strong></td><td>新人 5-8K + 出差补贴</td><td>新人 7-12K（杭州）</td><td><span class="tag tag-green">数据胜</span></td></tr>
-        <tr><td><strong>行业趋势</strong></td><td>制造业增长平缓，AI替代风险</td><td>数字化刚需，需求持续增长</td><td><span class="tag tag-green">数据胜</span></td></tr>
-        <tr><td><strong>转行成本</strong></td><td>专业对口（但已放弃）</td><td>23岁零沉没成本，3-4个月转行</td><td><span class="tag tag-blue">时机正好</span></td></tr>
-      </table></div>
+  <!-- 完整时间线 -->
+  <div class="card">
+    <h3>📅 完整时间线（含缓冲）</h3>
+    <div class="timeline">
+      <div class="tl-item"><div class="tl-period">第1-3天</div><div class="tl-title">前期市场调查</div><div class="tl-desc">100个JD分析 + 3个在职分析师对话</div></div>
+      <div class="tl-item"><div class="tl-period">第1-4周</div><div class="tl-title">SQL阶段 · 4个作品</div><div class="tl-desc">每周产出一个SQL查询集/报告。第2周开始投简历</div></div>
+      <div class="tl-item"><div class="tl-period">第5-6周</div><div class="tl-title">Excel+BI · 2个作品</div><div class="tl-desc">Excel报告+BI看板。投第2-3批简历</div></div>
+      <div class="tl-item"><div class="tl-period">第7-12周</div><div class="tl-title">Python+全栈 · 4个作品</div><div class="tl-desc">每两周一个大型作品。开始有面试</div></div>
+      <div class="tl-item"><div class="tl-period">第13-14周</div><div class="tl-title">打磨精品 · 准备面试</div><div class="tl-desc">精选3个最强项目，集中投递</div></div>
+      <div class="tl-item"><div class="tl-period">2026年Q4 — 2027年Q1</div><div class="tl-title">入职目标期</div><div class="tl-desc">主计划：2026年12月前入行。B计划：Q1 2027</div></div>
+      <div class="tl-item"><div class="tl-period">入职满一年后</div><div class="tl-title">第一次跳槽</div><div class="tl-desc">薪资涨幅30-50%，去更大的平台</div></div>
     </div>
   </div>
 
-  <!-- ══════════ 第零步：先调查 ══════════ -->
-  <div class="card" id="survey">
-    <div class="card-header" onclick="toggleCard(this)">
-      <h2><span class="icon" style="background:#eff6ff">🔍</span>第零步：先做调查（第1-3天）</h2>
-      <svg class="arrow" width="20" height="20" viewBox="0 0 20 20" fill="currentColor"><path d="M5 7l5 5 5-5" stroke="currentColor" stroke-width="2" fill="none"/></svg>
-    </div>
-    <div class="card-body">
-      <div class="warn"><strong>不要一上来就学SQL。</strong>先搞清楚市场到底要什么，再决定怎么学。</div>
-      <div class="table-wrap"><table>
-        <tr><th>#</th><th>任务</th><th>时间</th><th>产出</th></tr>
-        <tr><td>1</td><td>浏览BOSS直聘/拉勾，阅读<strong>杭州100个数据分析岗位JD</strong>，标注共性技能要求</td><td>2-3h</td><td>技能需求清单</td></tr>
-        <tr><td>2</td><td>找出出现频率最高的<strong>5个技能关键词</strong>，排优先级</td><td>1h</td><td>优先级排序表</td></tr>
-        <tr><td>3</td><td>在脉脉/知乎/即刻上找<strong>3个在职数据分析师</strong>，礼貌私信问他们实际工作内容</td><td>2h</td><td>3份对话记录</td></tr>
-        <tr><td>4</td><td>用调查结果<strong>重新审视学习路线</strong>，调优先级</td><td>1h</td><td>调整后的学习计划</td></tr>
-      </table></div>
-      <div class="info"><strong>为什么这一步重要：</strong>你可能发现市场上最要的不是Python而是SQL+BI工具，或者发现数据运营比数据分析师更好入行。这些认知比盲目学三个月有价值得多。</div>
-    </div>
+  <!-- B计划 -->
+  <div class="card">
+    <h3>🅱️ B计划：如果年底没入行</h3>
+    <div class="table-wrap"><table>
+      <tr><th>Plan B岗位</th><th>为什么</th><th>下一步</th></tr>
+      <tr><td>数据运营</td><td>门槛最低，SQL+Excel够用</td><td>干6-12个月积累经验后转数据分析</td></tr>
+      <tr><td>BI助理</td><td>做报表看板，不需要Python</td><td>积累1年BI经验后跳BI分析师</td></tr>
+      <tr><td>电商运营（数据方向）</td><td>杭州岗位量大，竞争小</td><td>主动承担数据工作，积累经验后转岗</td></tr>
+    </table></div>
+    <div class="info"><strong>第一份工作是入行门票。</strong>不管走哪条路进去，目标是第一年积累真正的分析项目经验。有了经验，学历和专业都不重要了。</div>
   </div>
 
-  <!-- ══════════ 市场调研 ══════════ -->
-  <div class="card" id="market-research">
-    <div class="card-header" onclick="toggleCard(this)">
-      <h2><span class="icon" style="background:#e8f5e9">📊</span>杭州市场调研（100+岗位分析）</h2>
-      <svg class="arrow" width="20" height="20" viewBox="0 0 20 20" fill="currentColor"><path d="M5 7l5 5 5-5" stroke="currentColor" stroke-width="2" fill="none"/></svg>
-    </div>
-    <div class="card-body">
-      <div class="info"><strong>数据来源：</strong>BOSS直聘、猎聘、拉勾、前程无忧、智联招聘、牛客、高校就业平台等。覆盖杭州100+数据分析相关岗位JD。2026年5月采集。</div>
-
-      <h3 style="font-size:15px;margin:16px 0 8px">🔑 技能关键词频次</h3>
-      <div class="table-wrap"><table>
-        <tr><th>技能</th><th>出现率</th><th>学习者优先级</th></tr>
-        <tr><td><strong>SQL</strong></td><td>100%</td><td><span class="tag tag-red">第1优先级</span></td></tr>
-        <tr><td><strong>Excel</strong></td><td>95%</td><td><span class="tag tag-red">第1优先级</span></td></tr>
-        <tr><td><strong>BI工具（Tableau/PowerBI/FineBI）</strong></td><td>82%</td><td><span class="tag tag-red">第1优先级</span></td></tr>
-        <tr><td><strong>Python</strong></td><td>88%</td><td><span class="tag tag-red">第1优先级</span></td></tr>
-        <tr><td>Hive/大数据平台</td><td>55%</td><td><span class="tag tag-orange">第2优先级</span></td></tr>
-        <tr><td>ETL/数仓</td><td>42%</td><td><span class="tag tag-orange">第2优先级</span></td></tr>
-        <tr><td>机器学习</td><td>35%</td><td><span class="tag tag-blue">第3优先级（入行后再学）</span></td></tr>
-        <tr><td>AB实验</td><td>12%</td><td><span class="tag tag-blue">第3优先级</span></td></tr>
-        <tr><td>R/SPSS/SAS</td><td>~10%</td><td><span class="tag tag-blue">不需要优先学</span></td></tr>
-      </table></div>
-
-      <h3 style="font-size:15px;margin:16px 0 8px">💰 薪资分级（新人入场区间）</h3>
-      <div class="table-wrap"><table>
-        <tr><th>岗位方向</th><th>新人月薪</th><th>技能门槛</th><th>适合民办本？</th></tr>
-        <tr><td><strong>数据运营</strong></td><td>6K-10K</td><td>SQL + Excel</td><td><span class="tag tag-green">✅ 最友好</span></td></tr>
-        <tr><td><strong>BI分析师</strong></td><td>8K-14K</td><td>SQL + BI工具</td><td><span class="tag tag-green">✅ 友好</span></td></tr>
-        <tr><td><strong>业务数据分析</strong></td><td>8K-15K</td><td>SQL + Python + BI</td><td><span class="tag tag-green">✅ 友好</span></td></tr>
-        <tr><td><strong>电商数据分析</strong></td><td>7K-12K</td><td>SQL + Excel + 行业知识</td><td><span class="tag tag-green">✅ 友好</span></td></tr>
-        <tr><td>风控数据分析</td><td>10K-15K</td><td>SQL + Python + 统计</td><td><span class="tag tag-orange">⚠ 偏好硕士</span></td></tr>
-        <tr><td>数据工程</td><td>10.5K-15K</td><td>SQL + Python + Hive</td><td><span class="tag tag-orange">⚠ 偏技术</span></td></tr>
-      </table></div>
-
-      <h3 style="font-size:15px;margin:16px 0 8px">🎓 学历要求分布</h3>
-      <div class="table-wrap"><table>
-        <tr><th>学历门槛</th><th>占比</th><th>你的情况</th></tr>
-        <tr><td>本科及以上（不卡院校）</td><td>~60%</td><td><span class="tag tag-green">✅ 够用</span></td></tr>
-        <tr><td>985/211优先</td><td>~25%</td><td><span class="tag tag-orange">⚠ 大厂难，中小厂无影响</span></td></tr>
-        <tr><td>硕士优先</td><td>~10%</td><td><span class="tag tag-red">✗ 暂不投</span></td></tr>
-        <tr><td>不限</td><td>~5%</td><td><span class="tag tag-green">✅</span></td></tr>
-      </table></div>
-
-      <h3 style="font-size:15px;margin:16px 0 8px">🏢 杭州热门行业需求</h3>
-      <div class="table-wrap"><table>
-        <tr><th>行业</th><th>需求热度</th><th>入行难度</th></tr>
-        <tr><td>电商/新零售</td><td><span class="tag tag-green">最高</span></td><td>低 — 不卡专业背景</td></tr>
-        <tr><td>互联网/游戏</td><td><span class="tag tag-green">很高</span></td><td>中 — 需要项目经验</td></tr>
-        <tr><td>金融科技</td><td><span class="tag tag-orange">持续需求</span></td><td>高 — 偏好对口专业硕士</td></tr>
-        <tr><td>企业服务/SaaS</td><td><span class="tag tag-orange">增长中</span></td><td>中低 — 新兴领域竞争少</td></tr>
-        <tr><td>制造业数字化</td><td><span class="tag tag-blue">稳定</span></td><td>低 — 传统企业转型需求</td></tr>
-      </table></div>
-
-      <h3 style="font-size:15px;margin:16px 0 8px">✅ 对你的关键结论</h3>
-      <table style="margin:0"><tr><td style="border:none;padding:0">
-        <p style="margin:8px 0;font-size:14px"><strong>1.</strong> 民办本科只影响25%的岗位（大厂/金融），剩下75%完全不卡学校——学历不是硬伤</p>
-        <p style="margin:8px 0;font-size:14px"><strong>2.</strong> SQL+Excel+BI工具+Python 四个技能覆盖90%以上JD，学习优先级不要被机器学习/Hive带偏</p>
-        <p style="margin:8px 0;font-size:14px"><strong>3.</strong> 新人真实起薪6-10K，<strong>7-9K是合理预期</strong>——和我们之前预估一致</p>
-        <p style="margin:8px 0;font-size:14px"><strong>4.</strong> <strong>数据运营和BI分析师</strong>是最适合民办本转行的两个入门岗位——门槛低、需求量大、不卡学历</p>
-        <p style="margin:8px 0;font-size:14px"><strong>5.</strong> 杭州电商方向是最大就业市场，你不需要学金融/风控知识，专注电商数据分析即可</p>
-        <p style="margin:8px 0;font-size:14px"><strong>6.</strong> 80%的JD要求「业务理解能力」——这只能靠做项目积累，没法纯学理论</p>
-      </td></tr></table>
-    </div>
+  <!-- 信息根据地 -->
+  <div class="card">
+    <h3>🌐 信息根据地建设</h3>
+    <div class="table-wrap"><table>
+      <tr><th>维度</th><th>做法</th><th>频率</th></tr>
+      <tr><td>行业报告</td><td>读数据分析报告（艾瑞、QuestMobile、公司博客）</td><td>每周3篇</td></tr>
+      <tr><td>社群</td><td>加入2-3个数据分析社群，观察讨论</td><td>每天10分钟</td></tr>
+      <tr><td>输出</td><td>学习过程和项目发在语雀/知乎</td><td>每周1篇</td></tr>
+      <tr><td>面试笔记</td><td>每次面试后记录问题和表现</td><td>每次面试后</td></tr>
+      <tr><td>技能清单</td><td>维护"市场要求 vs 我已掌握"对照表</td><td>每两周</td></tr>
+    </table></div>
+    <p style="font-size:12px;color:var(--gray-500)">面试官搜你名字看到持续输出——这就是最好的简历。</p>
   </div>
 
-  <!-- ══════════ 学习路线 ══════════ -->
-  <div class="card" id="roadmap">
-    <div class="card-header" onclick="toggleCard(this)">
-      <h2><span class="icon" style="background:#f0fdf4">📚</span>学习路线（项目从第1周开始）</h2>
-      <svg class="arrow" width="20" height="20" viewBox="0 0 20 20" fill="currentColor"><path d="M5 7l5 5 5-5" stroke="currentColor" stroke-width="2" fill="none"/></svg>
-    </div>
-    <div class="card-body">
-      <div class="warn"><strong>核心原则：学什么就做什么项目。</strong>每周至少产出一个可展示的东西。到第14周你有十几个作品，从中选最好的三个放进简历。</div>
-
-      <div class="phase phase-1">阶段一 · SQL · 第1-4周</div>
-      <div class="table-wrap"><table>
-        <tr><th>周次</th><th>学什么</th><th>本周项目（必须产出）</th></tr>
-        <tr><td>第1周</td><td>SELECT、WHERE、GROUP BY、HAVING、聚合函数</td><td><strong>SQL查询集 #1：</strong>找公开数据集，写10条业务查询——日活、下单率、客单价、品类排名</td></tr>
-        <tr><td>第2周</td><td>多表联查：JOIN全家桶、UNION</td><td><strong>SQL查询集 #2：</strong>建3个关联表，写5条多表联查——用户购买明细、品类交叉分析</td></tr>
-        <tr><td>第3周</td><td>子查询、CASE WHEN、窗口函数</td><td><strong>SQL查询集 #3：</strong>用户留存SQL、RFM分层SQL、连续登录天数SQL——至少5条，含窗口函数</td></tr>
-        <tr><td>第4周</td><td>综合实战</td><td><strong>SQL分析报告：</strong>自选数据集，从数据清洗到分析结论，用SQL完成全流程，写2页分析总结</td></tr>
-      </table></div>
-
-      <div class="phase phase-2">阶段二 · Excel + BI · 第5-6周</div>
-      <div class="table-wrap"><table>
-        <tr><td>第5周</td><td>Excel：数据透视表、VLOOKUP、条件格式、图表</td><td><strong>Excel分析报告：</strong>拿SQL分析的数据，用Excel做带图表、带结论的分析报告</td></tr>
-        <tr><td>第6周</td><td>Power BI：Power Query清洗 + 可视化看板搭建</td><td><strong>Power BI看板：</strong>搭建完整业务看板（含至少5个图表），导出截图</td></tr>
-      </table></div>
-
-      <div class="phase phase-3">阶段三 · Python · 第7-12周</div>
-      <div class="table-wrap"><table>
-        <tr><td>7-8周</td><td>Python基础 + Pandas核心操作</td><td><strong>Python数据处理脚本：</strong>读取CSV→清洗→分组聚合→导出结果</td></tr>
-        <tr><td>9-10周</td><td>Pandas进阶 + 数据清洗实战</td><td><strong>Python + SQL联合分析：</strong>SQL取数 → Python清洗分析 → 输出结论</td></tr>
-        <tr><td>第11周</td><td>Matplotlib + Seaborn 可视化</td><td><strong>可视化作品集：</strong>10张不同类型图表，每张配一句话结论</td></tr>
-        <tr><td>第12周</td><td>全流程综合</td><td><strong>完整分析项目：</strong>数据获取→SQL处理→Python分析→可视化→结论报告</td></tr>
-      </table></div>
-
-      <div class="phase phase-4">阶段四 · 打磨 · 第13-14周</div>
-      <div class="table-wrap"><table>
-        <tr><td>第13周</td><td>从已有作品中选最好的3-5个，深度打磨</td><td><strong>3个精品项目：</strong>每个形成PDF报告（数据→分析→图表→结论），放GitHub + 语雀</td></tr>
-        <tr><td>第14周</td><td>简历包装 + 模拟面试</td><td><strong>最终简历：</strong>以项目经验为主体，突出"能独立完成数据分析全流程"</td></tr>
-      </table></div>
-    </div>
-  </div>
-
-  <!-- ══════════ 面试投递 ══════════ -->
-  <div class="card" id="apply">
-    <div class="card-header" onclick="toggleCard(this)">
-      <h2><span class="icon" style="background:#fff7ed">📋</span>面试投递节奏（每两周一次，获取市场反馈）</h2>
-      <svg class="arrow" width="20" height="20" viewBox="0 0 20 20" fill="currentColor"><path d="M5 7l5 5 5-5" stroke="currentColor" stroke-width="2" fill="none"/></svg>
-    </div>
-    <div class="card-body">
-      <div class="table-wrap"><table>
-        <tr><th>时间</th><th>动作</th><th>目的</th></tr>
-        <tr><td><strong>第2周</strong></td><td>投10份简历</td><td>测试市场反应，别等准备好了再投</td></tr>
-        <tr><td><strong>第4周</strong></td><td>投10份，更新简历</td><td>根据反馈修正简历和技能方向</td></tr>
-        <tr><td><strong>第6周</strong></td><td>投15份，调整投递岗位类型</td><td>对比不同岗位的反馈差异</td></tr>
-        <tr><td><strong>第8周</strong></td><td>投15份，更新简历（加了Python项目）</td><td>看简历变强后反馈是否变好</td></tr>
-        <tr><td><strong>第10周</strong></td><td>投15份，主动约面试</td><td>检验面试能力，积累真实面试经验</td></tr>
-        <tr><td><strong>第12周</strong></td><td>投15份，集中面试</td><td>面试是免费市场调研——面试官问什么，市场就要什么</td></tr>
-        <tr><td><strong>第14周+</strong></td><td>集中投递，目标拿offer</td><td>简历和面试能力已经过6轮迭代</td></tr>
-      </table></div>
-      <div class="info"><strong>核心心态：</strong>面试不是为了通过，是为了获取信息。被拒了比没人回应好——至少你知道了市场在乎什么。每次面试回来更新学习优先级。</div>
-    </div>
-  </div>
-
-  <!-- ══════════ 信息根据地 ══════════ -->
-  <div class="card" id="infobase">
-    <div class="card-header" onclick="toggleCard(this)">
-      <h2><span class="icon" style="background:#fdf2f8">🌐</span>信息根据地建设</h2>
-      <svg class="arrow" width="20" height="20" viewBox="0 0 20 20" fill="currentColor"><path d="M5 7l5 5 5-5" stroke="currentColor" stroke-width="2" fill="none"/></svg>
-    </div>
-    <div class="card-body">
-      <div class="table-wrap"><table>
-        <tr><th>维度</th><th>具体做法</th><th>频率</th></tr>
-        <tr><td><strong>行业报告</strong></td><td>阅读数据分析相关报告（艾瑞、QuestMobile、各公司数据博客）</td><td>每周3篇</td></tr>
-        <tr><td><strong>社群</strong></td><td>加入2-3个数据分析社群（即刻、知识星球、微信群），观察讨论</td><td>每天10分钟</td></tr>
-        <tr><td><strong>输出</strong></td><td>把学习过程和每周项目发在语雀/知乎上，标题带"数据分析"</td><td>每周1篇</td></tr>
-        <tr><td><strong>面试笔记</strong></td><td>每次面试后记录被问到了什么、自己答得好/差在哪</td><td>每次面试后</td></tr>
-        <tr><td><strong>技能清单</strong></td><td>维护"市场要求的技能 vs 我已掌握的技能"对照表</td><td>每两周更新</td></tr>
-      </table></div>
-      <div class="info">当你开始面试时，面试官搜你名字能看到你持续输出的内容——这本身就是一份最好的简历。</div>
-    </div>
-  </div>
-
-  <!-- ══════════ 完整时间线 ══════════ -->
-  <div class="card" id="timeline">
-    <div class="card-header" onclick="toggleCard(this)">
-      <h2><span class="icon" style="background:#f0fdf4">📅</span>完整时间线（含缓冲）</h2>
-      <svg class="arrow" width="20" height="20" viewBox="0 0 20 20" fill="currentColor"><path d="M5 7l5 5 5-5" stroke="currentColor" stroke-width="2" fill="none"/></svg>
-    </div>
-    <div class="card-body">
-      <div class="timeline">
-        <div class="tl-item"><div class="tl-period">第1-3天</div><div class="tl-title">前期市场调查</div><div class="tl-desc">100个JD分析 + 3个在职分析师对话 + 调整学习优先级</div></div>
-        <div class="tl-item"><div class="tl-period">第1-4周</div><div class="tl-title">SQL 阶段 · 4个项目作品</div><div class="tl-desc">每周末产出一个SQL查询集或分析报告。第2周开始投第一批简历</div></div>
-        <div class="tl-item"><div class="tl-period">第5-6周</div><div class="tl-title">Excel + Power BI · 2个作品</div><div class="tl-desc">Excel分析报告 + BI看板。投第2-3批简历</div></div>
-        <div class="tl-item"><div class="tl-period">第7-12周</div><div class="tl-title">Python + 全栈技能 · 4个作品</div><div class="tl-desc">每两周一个大型作品，投第4-6批简历，开始有面试</div></div>
-        <div class="tl-item"><div class="tl-period">第13-14周</div><div class="tl-title">打磨精品 · 准备面试</div><div class="tl-desc">精选3个最强项目，集中投递和面试</div></div>
-        <div class="tl-item"><div class="tl-period">2026年Q4 — 2027年Q1</div><div class="tl-title">入职目标期</div><div class="tl-desc">主计划：2026年12月前入行。B计划：Q1 2027，先数据运营/BI助理入行再转</div></div>
-        <div class="tl-item"><div class="tl-period">入职满一年后</div><div class="tl-title">第一次跳槽</div><div class="tl-desc">薪资涨幅30-50%，去更大的平台</div></div>
-      </div>
-    </div>
-  </div>
-
-  <!-- ══════════ B计划 ══════════ -->
-  <div class="card" id="planb">
-    <div class="card-header" onclick="toggleCard(this)">
-      <h2><span class="icon" style="background:#fef2f2">🅱️</span>B计划：如果年底没入行</h2>
-      <svg class="arrow" width="20" height="20" viewBox="0 0 20 20" fill="currentColor"><path d="M5 7l5 5 5-5" stroke="currentColor" stroke-width="2" fill="none"/></svg>
-    </div>
-    <div class="card-body">
-      <div class="table-wrap"><table>
-        <tr><th>Plan B 岗位</th><th>为什么</th><th>下一步</th></tr>
-        <tr><td><strong>数据运营</strong></td><td>技术门槛最低，偏业务，对项目经验要求不如数据分析师高</td><td>干6-12个月，积累业务经验后转数据分析岗</td></tr>
-        <tr><td><strong>BI助理</strong></td><td>主要做报表和看板，SQL+Excel够用，不需要Python</td><td>边干边学，积累1年经验后跳BI分析师</td></tr>
-        <tr><td><strong>电商运营（数据方向）</strong></td><td>杭州电商公司多，岗位量大，入行竞争小</td><td>主动承担团队数据工作，积累分析经验后转岗</td></tr>
-      </table></div>
-      <div class="info"><strong>关键心态：</strong>第一份工作是一张入行门票，不是终点。不管走哪条路进去，目标是第一年积累真正的分析项目经验。有了经验，学历和专业都不重要了。</div>
-    </div>
-  </div>
-
-  <!-- ══════════ 目标岗位 ══════════ -->
-  <div class="card" id="jobs">
-    <div class="card-header" onclick="toggleCard(this)">
-      <h2><span class="icon" style="background:#eff6ff">🎯</span>目标岗位名称</h2>
-      <svg class="arrow" width="20" height="20" viewBox="0 0 20 20" fill="currentColor"><path d="M5 7l5 5 5-5" stroke="currentColor" stroke-width="2" fill="none"/></svg>
-    </div>
-    <div class="card-body">
-      <div class="info">搜索关键词：<strong>「数据分析」「SQL」「Python数据」「BI」「数据运营」「Excel」</strong></div>
-      <div class="table-wrap"><table>
-        <tr><th>梯队</th><th>岗位名</th><th>说明</th></tr>
-        <tr><td><span class="tag tag-green">第一梯队</span></td><td>数据分析师</td><td>最通用，简历匹配度最高</td></tr>
-        <tr><td><span class="tag tag-green">第一梯队</span></td><td>BI分析师</td><td>报表看板方向，入门友好</td></tr>
-        <tr><td><span class="tag tag-green">第一梯队</span></td><td>数据运营</td><td>偏业务，技术门槛最低，Plan B首选</td></tr>
-        <tr><td><span class="tag tag-orange">第二梯队</span></td><td>商业分析</td><td>偏策略方向</td></tr>
-        <tr><td><span class="tag tag-orange">第二梯队</span></td><td>经营分析 / 数据支持</td><td>传统公司常用名称</td></tr>
-        <tr><td><span class="tag tag-orange">第二梯队</span></td><td>数据产品专员</td><td>偏产品方向</td></tr>
-      </table></div>
-    </div>
-  </div>
-
-  <!-- ══════════ 收入预期 ══════════ -->
-  <div class="card" id="income">
-    <div class="card-header" onclick="toggleCard(this)">
-      <h2><span class="icon" style="background:#fff7ed">💰</span>收入预期（调整后）</h2>
-      <svg class="arrow" width="20" height="20" viewBox="0 0 20 20" fill="currentColor"><path d="M5 7l5 5 5-5" stroke="currentColor" stroke-width="2" fill="none"/></svg>
-    </div>
-    <div class="card-body">
-      <div class="table-wrap"><table>
-        <tr><th>阶段</th><th>时间</th><th>月薪</th><th>核心目标</th></tr>
-        <tr><td>第一份工作</td><td>2026年底-2027年初</td><td><strong>7-9K</strong>（杭州，保守预期）</td><td><span class="tag tag-orange">买入行门票</span></td></tr>
-        <tr><td>第一次跳槽</td><td>入职满1年</td><td>涨幅30-50%，<strong>10-14K</strong></td><td><span class="tag tag-blue">凭经验跳槽</span></td></tr>
-        <tr><td>资深阶段</td><td>入行3-5年</td><td><strong>20-35K</strong></td><td><span class="tag tag-green">职业上升期</span></td></tr>
-      </table></div>
-      <div class="warn"><strong>第一年最重要的KPI不是月薪，是做了多少真正的分析项目。</strong>给8K但能独立做分析、积累项目经验，比给10K但天天整Excel表格有价值得多。一年后跳槽，你简历上写的不是薪资数字，是项目经历。</div>
-    </div>
-  </div>
-
-  <!-- ══════════ 目标城市 ══════════ -->
-  <div class="card" id="cities">
-    <div class="card-header" onclick="toggleCard(this)">
-      <h2><span class="icon" style="background:#eff6ff">🏙️</span>目标城市</h2>
-      <svg class="arrow" width="20" height="20" viewBox="0 0 20 20" fill="currentColor"><path d="M5 7l5 5 5-5" stroke="currentColor" stroke-width="2" fill="none"/></svg>
-    </div>
-    <div class="card-body">
-      <div class="table-wrap"><table>
-        <tr><th>优先级</th><th>城市</th><th>理由</th></tr>
-        <tr><td><span class="tag tag-green">首选</span></td><td><strong>杭州</strong></td><td>电商之都，数据分析岗位密度最高，阿里生态带动大量需求，生活成本低于上海</td></tr>
-        <tr><td><span class="tag tag-blue">次选</span></td><td><strong>上海</strong></td><td>金融+互联网双中心，薪资天花板高，竞争也更激烈</td></tr>
-        <tr><td><span class="tag tag-blue">备选</span></td><td><strong>成都</strong></td><td>西南IT中心，岗位增长快，生活安逸性价比高</td></tr>
-      </table></div>
-    </div>
-  </div>
+</div>
 
 </main>
 
 <footer>
   <p>第一份工作是买一张入行的门票，不是去赚钱的。</p>
-  <p style="margin-top:4px;opacity:.6">计划制定于 2026年5月 · 持续更新中</p>
 </footer>
 
 <script>
-// ── 每日打卡 ──
-const CHECKIN_KEY = 'da_checkin_';
+// ── Tab切换 ──
+function switchTab(tab) {
+  document.querySelectorAll('.tab-btn').forEach(b => b.classList.remove('active'));
+  document.querySelectorAll('.tab-content').forEach(c => c.classList.remove('active'));
+  document.getElementById('tab-'+tab).classList.add('active');
+  document.getElementById('tab-content-'+tab)?.classList.add('active');
+  // Fix: manually match tab name to content
+  document.querySelectorAll('.tab-content').forEach(function(c){
+    if(c.id === 'tab-'+tab) c.classList.add('active');
+  });
+  localStorage.setItem('activeTab', tab);
+}
 
-const dailyTasks = [
-  { id: 'study_am', text: '上午学习 3小时', time: '09:00 — 12:00' },
-  { id: 'study_pm', text: '下午动手 4小时', time: '14:00 — 18:00' },
-  { id: 'project_pm', text: '晚间项目 + 输出 2小时', time: '19:30 — 21:30' },
-  { id: 'reading', text: '阅读行业报告', time: '至少1篇' },
-  { id: 'practice', text: '刷SQL题 / 写代码练习', time: '至少30分钟' },
-  { id: 'community', text: '浏览数据分析社群', time: '10分钟' },
-  { id: 'output', text: '写语雀/知乎文章或笔记', time: '每周至少1篇' },
-  { id: 'sleep', text: '23:00前睡觉', time: '保证7-8小时' },
+// Restore last tab
+(function(){
+  var saved = localStorage.getItem('activeTab') || 'market';
+  switchTab(saved);
+})();
+
+// ── 每日打卡 ──
+var dailyTasks = [
+  { id:'study_am', text:'上午学习3h', time:'09:00-12:00' },
+  { id:'study_pm', text:'下午动手4h', time:'14:00-18:00' },
+  { id:'project_pm', text:'晚间项目+输出2h', time:'19:30-21:30' },
+  { id:'reading', text:'读行业报告', time:'≥1篇' },
+  { id:'practice', text:'刷SQL题/写代码', time:'≥30min' },
+  { id:'community', text:'浏览数据社群', time:'10min' },
+  { id:'output', text:'写语雀/知乎文章', time:'≥1篇/周' },
+  { id:'sleep', text:'23:00前睡觉', time:'7-8h' },
 ];
 
-function getTodayKey() {
-  const d = new Date();
-  return CHECKIN_KEY + d.getFullYear() + '-' + (d.getMonth()+1) + '-' + d.getDate();
-}
+function getTodayKey(){var d=new Date();return 'da_'+d.getFullYear()+'-'+(d.getMonth()+1)+'-'+d.getDate()}
+function loadCheckin(){try{return JSON.parse(localStorage.getItem(getTodayKey()))||{}}catch(e){return{}}}
+function saveCheckin(d){localStorage.setItem(getTodayKey(),JSON.stringify(d))}
 
-function loadCheckin() {
-  const key = getTodayKey();
-  try { return JSON.parse(localStorage.getItem(key)) || {}; }
-  catch(e) { return {}; }
-}
-
-function saveCheckin(data) {
-  const key = getTodayKey();
-  localStorage.setItem(key, JSON.stringify(data));
-}
-
-function renderCheckin() {
-  const data = loadCheckin();
-  const list = document.getElementById('checkinList');
-  list.innerHTML = dailyTasks.map(t => {
-    const done = !!data[t.id];
-    return '<li class="checkin-item' + (done ? ' done' : '') + '" data-id="' + t.id + '" onclick="toggleTask(this)">' +
-      '<div class="checkin-dot"></div>' +
-      '<span class="checkin-text">' + t.text + '</span>' +
-      '<span class="checkin-badge">' + t.time + '</span>' +
-    '</li>';
+function renderCheckin(){
+  var data=loadCheckin();
+  var container=document.getElementById('checkinChips');
+  if(!container)return;
+  container.innerHTML=dailyTasks.map(function(t){
+    var done=!!data[t.id];
+    return '<span class="checkin-chip'+(done?' done':'')+'" data-id="'+t.id+'" onclick="toggleChip(this)">'+t.text+'</span>';
   }).join('');
-  updateStats();
+  updateProgress();
 }
 
-function toggleTask(el) {
-  const id = el.dataset.id;
-  const data = loadCheckin();
-  data[id] = !data[id];
-  saveCheckin(data);
-  if (data[id]) {
-    el.classList.add('done');
-  } else {
-    el.classList.remove('done');
-  }
-  updateStats();
+function toggleChip(el){
+  var id=el.dataset.id, data=loadCheckin();
+  data[id]=!data[id]; saveCheckin(data);
+  data[id]?el.classList.add('done'):el.classList.remove('done');
+  updateProgress();
 }
 
-function updateStats() {
-  const data = loadCheckin();
-  const total = dailyTasks.length;
-  const done = Object.values(data).filter(Boolean).length;
-  document.getElementById('doneCount').textContent = done + '/' + total;
-  const pct = total > 0 ? Math.round(done/total*100) : 0;
-  document.getElementById('progressBar').style.width = pct + '%';
+function updateProgress(){
+  var data=loadCheckin(), total=dailyTasks.length;
+  var done=Object.values(data).filter(Boolean).length;
+  var el=document.getElementById('doneCount'); if(el)el.textContent=done+'/'+total;
+  var bar=document.getElementById('progressBar'); if(bar)bar.style.width=Math.round(done/total*100)+'%';
 }
 
-function resetCheckin() {
-  const key = getTodayKey();
-  localStorage.removeItem(key);
-  renderCheckin();
-}
+function resetCheckin(){localStorage.removeItem(getTodayKey());renderCheckin()}
 
-function updateDate() {
-  const d = new Date();
-  const weekdays = ['日','一','二','三','四','五','六'];
-  document.getElementById('dateDisplay').textContent = d.getFullYear() + '年' + (d.getMonth()+1) + '月' + d.getDate() + '日';
-  document.getElementById('weekdayDisplay').textContent = '星期' + weekdays[d.getDay()];
-}
+// ── 日期 ──
+(function(){
+  var d=new Date(), wd=['日','一','二','三','四','五','六'];
+  var el=document.getElementById('headerDate');
+  if(el)el.textContent=d.getFullYear()+'年'+(d.getMonth()+1)+'月'+d.getDate()+'日 星期'+wd[d.getDay()];
+})();
 
-// ── 菜单 ──
-function toggleMenu() {
-  document.getElementById('nav').classList.toggle('open');
-  document.getElementById('menuBtn').classList.toggle('open');
-}
-
-function toggleCard(header) {
-  header.parentElement.classList.toggle('open');
-}
-
-// ── 导航点击 ──
-document.querySelectorAll('nav a').forEach(function(a) {
-  a.addEventListener('click', function(e) {
-    e.preventDefault();
-    var target = document.querySelector(this.getAttribute('href'));
-    if (target) {
-      target.scrollIntoView({ behavior: 'smooth', block: 'start' });
-      document.getElementById('nav').classList.remove('open');
-      document.getElementById('menuBtn').classList.remove('open');
-      setTimeout(function() {
-        var card = target.closest('.card');
-        if (card && !card.classList.contains('open')) card.classList.add('open');
-      }, 400);
-    }
-  });
-});
-
-// ── 初始化 ──
-updateDate();
 renderCheckin();
 </script>
 </body>
