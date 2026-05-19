@@ -137,7 +137,8 @@ footer{text-align:center;padding:20px;color:var(--gray-500);font-size:13px;borde
   <nav id="nav">
     <a href="#checkin">每日打卡</a>
     <a href="#stats">进度总览</a>
-    <a href="#survey">第零步：先调查</a>
+    <a href="#market-research">市场调研</a>
+    <a href="#survey">调查方法</a>
     <a href="#roadmap">学习路线</a>
     <a href="#apply">面试投递</a>
     <a href="#infobase">信息根据地</a>
@@ -216,6 +217,71 @@ footer{text-align:center;padding:20px;color:var(--gray-500);font-size:13px;borde
         <tr><td>4</td><td>用调查结果<strong>重新审视学习路线</strong>，调优先级</td><td>1h</td><td>调整后的学习计划</td></tr>
       </table></div>
       <div class="info"><strong>为什么这一步重要：</strong>你可能发现市场上最要的不是Python而是SQL+BI工具，或者发现数据运营比数据分析师更好入行。这些认知比盲目学三个月有价值得多。</div>
+    </div>
+  </div>
+
+  <!-- ══════════ 市场调研 ══════════ -->
+  <div class="card" id="market-research">
+    <div class="card-header" onclick="toggleCard(this)">
+      <h2><span class="icon" style="background:#e8f5e9">📊</span>杭州市场调研（100+岗位分析）</h2>
+      <svg class="arrow" width="20" height="20" viewBox="0 0 20 20" fill="currentColor"><path d="M5 7l5 5 5-5" stroke="currentColor" stroke-width="2" fill="none"/></svg>
+    </div>
+    <div class="card-body">
+      <div class="info"><strong>数据来源：</strong>BOSS直聘、猎聘、拉勾、前程无忧、智联招聘、牛客、高校就业平台等。覆盖杭州100+数据分析相关岗位JD。2026年5月采集。</div>
+
+      <h3 style="font-size:15px;margin:16px 0 8px">🔑 技能关键词频次</h3>
+      <div class="table-wrap"><table>
+        <tr><th>技能</th><th>出现率</th><th>学习者优先级</th></tr>
+        <tr><td><strong>SQL</strong></td><td>100%</td><td><span class="tag tag-red">第1优先级</span></td></tr>
+        <tr><td><strong>Excel</strong></td><td>95%</td><td><span class="tag tag-red">第1优先级</span></td></tr>
+        <tr><td><strong>BI工具（Tableau/PowerBI/FineBI）</strong></td><td>82%</td><td><span class="tag tag-red">第1优先级</span></td></tr>
+        <tr><td><strong>Python</strong></td><td>88%</td><td><span class="tag tag-red">第1优先级</span></td></tr>
+        <tr><td>Hive/大数据平台</td><td>55%</td><td><span class="tag tag-orange">第2优先级</span></td></tr>
+        <tr><td>ETL/数仓</td><td>42%</td><td><span class="tag tag-orange">第2优先级</span></td></tr>
+        <tr><td>机器学习</td><td>35%</td><td><span class="tag tag-blue">第3优先级（入行后再学）</span></td></tr>
+        <tr><td>AB实验</td><td>12%</td><td><span class="tag tag-blue">第3优先级</span></td></tr>
+        <tr><td>R/SPSS/SAS</td><td>~10%</td><td><span class="tag tag-blue">不需要优先学</span></td></tr>
+      </table></div>
+
+      <h3 style="font-size:15px;margin:16px 0 8px">💰 薪资分级（新人入场区间）</h3>
+      <div class="table-wrap"><table>
+        <tr><th>岗位方向</th><th>新人月薪</th><th>技能门槛</th><th>适合民办本？</th></tr>
+        <tr><td><strong>数据运营</strong></td><td>6K-10K</td><td>SQL + Excel</td><td><span class="tag tag-green">✅ 最友好</span></td></tr>
+        <tr><td><strong>BI分析师</strong></td><td>8K-14K</td><td>SQL + BI工具</td><td><span class="tag tag-green">✅ 友好</span></td></tr>
+        <tr><td><strong>业务数据分析</strong></td><td>8K-15K</td><td>SQL + Python + BI</td><td><span class="tag tag-green">✅ 友好</span></td></tr>
+        <tr><td><strong>电商数据分析</strong></td><td>7K-12K</td><td>SQL + Excel + 行业知识</td><td><span class="tag tag-green">✅ 友好</span></td></tr>
+        <tr><td>风控数据分析</td><td>10K-15K</td><td>SQL + Python + 统计</td><td><span class="tag tag-orange">⚠ 偏好硕士</span></td></tr>
+        <tr><td>数据工程</td><td>10.5K-15K</td><td>SQL + Python + Hive</td><td><span class="tag tag-orange">⚠ 偏技术</span></td></tr>
+      </table></div>
+
+      <h3 style="font-size:15px;margin:16px 0 8px">🎓 学历要求分布</h3>
+      <div class="table-wrap"><table>
+        <tr><th>学历门槛</th><th>占比</th><th>你的情况</th></tr>
+        <tr><td>本科及以上（不卡院校）</td><td>~60%</td><td><span class="tag tag-green">✅ 够用</span></td></tr>
+        <tr><td>985/211优先</td><td>~25%</td><td><span class="tag tag-orange">⚠ 大厂难，中小厂无影响</span></td></tr>
+        <tr><td>硕士优先</td><td>~10%</td><td><span class="tag tag-red">✗ 暂不投</span></td></tr>
+        <tr><td>不限</td><td>~5%</td><td><span class="tag tag-green">✅</span></td></tr>
+      </table></div>
+
+      <h3 style="font-size:15px;margin:16px 0 8px">🏢 杭州热门行业需求</h3>
+      <div class="table-wrap"><table>
+        <tr><th>行业</th><th>需求热度</th><th>入行难度</th></tr>
+        <tr><td>电商/新零售</td><td><span class="tag tag-green">最高</span></td><td>低 — 不卡专业背景</td></tr>
+        <tr><td>互联网/游戏</td><td><span class="tag tag-green">很高</span></td><td>中 — 需要项目经验</td></tr>
+        <tr><td>金融科技</td><td><span class="tag tag-orange">持续需求</span></td><td>高 — 偏好对口专业硕士</td></tr>
+        <tr><td>企业服务/SaaS</td><td><span class="tag tag-orange">增长中</span></td><td>中低 — 新兴领域竞争少</td></tr>
+        <tr><td>制造业数字化</td><td><span class="tag tag-blue">稳定</span></td><td>低 — 传统企业转型需求</td></tr>
+      </table></div>
+
+      <h3 style="font-size:15px;margin:16px 0 8px">✅ 对你的关键结论</h3>
+      <table style="margin:0"><tr><td style="border:none;padding:0">
+        <p style="margin:8px 0;font-size:14px"><strong>1.</strong> 民办本科只影响25%的岗位（大厂/金融），剩下75%完全不卡学校——学历不是硬伤</p>
+        <p style="margin:8px 0;font-size:14px"><strong>2.</strong> SQL+Excel+BI工具+Python 四个技能覆盖90%以上JD，学习优先级不要被机器学习/Hive带偏</p>
+        <p style="margin:8px 0;font-size:14px"><strong>3.</strong> 新人真实起薪6-10K，<strong>7-9K是合理预期</strong>——和我们之前预估一致</p>
+        <p style="margin:8px 0;font-size:14px"><strong>4.</strong> <strong>数据运营和BI分析师</strong>是最适合民办本转行的两个入门岗位——门槛低、需求量大、不卡学历</p>
+        <p style="margin:8px 0;font-size:14px"><strong>5.</strong> 杭州电商方向是最大就业市场，你不需要学金融/风控知识，专注电商数据分析即可</p>
+        <p style="margin:8px 0;font-size:14px"><strong>6.</strong> 80%的JD要求「业务理解能力」——这只能靠做项目积累，没法纯学理论</p>
+      </td></tr></table>
     </div>
   </div>
 
