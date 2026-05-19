@@ -111,6 +111,7 @@ footer{text-align:center;padding:24px;color:var(--text3);font-size:12px;border-t
       <button class="tab-btn active" id="btn-market" onclick="switchTab('market')">市场洞察</button>
       <button class="tab-btn" id="btn-learn" onclick="switchTab('learn')">学习计划</button>
       <button class="tab-btn" id="btn-plan" onclick="switchTab('plan')">路线图</button>
+      <button class="tab-btn" id="btn-resume" onclick="switchTab('resume')">我的简历</button>
     </div>
   </div>
 </header>
@@ -304,59 +305,6 @@ footer{text-align:center;padding:24px;color:var(--text3);font-size:12px;border-t
     <div class="metric"><div class="metric-val">7-9K</div><div class="metric-label">现实起薪</div></div>
   </div>
 
-  <!-- 个人简历 -->
-  <div class="card">
-    <h3>个人简历</h3>
-    <div style="font-size:13px;line-height:1.8">
-      <div style="display:flex;justify-content:space-between;align-items:flex-start;flex-wrap:wrap;gap:12px;margin-bottom:16px">
-        <div>
-          <div style="font-size:18px;font-weight:700;color:var(--text);margin-bottom:4px">潘嘉毅</div>
-          <div style="color:var(--text2)">185 5963 2098 · 2450776278@qq.com</div>
-        </div>
-        <div style="text-align:right">
-          <div style="color:var(--accent);font-weight:600">意向城市：杭州</div>
-          <div style="color:var(--text2)">期望薪资：7-9K · 数据分析 / 数据运营</div>
-        </div>
-      </div>
-
-      <div style="margin-bottom:16px">
-        <div style="font-weight:700;font-size:14px;color:var(--accent);border-bottom:1.5px solid var(--accent-light);padding-bottom:4px;margin-bottom:10px">教育背景</div>
-        <div style="display:flex;justify-content:space-between;flex-wrap:wrap"><strong>福州外语外贸学院</strong> · 自动化（专升本）<span style="color:var(--text2)">2024.09 — 2026.06</span></div>
-        <div style="display:flex;justify-content:space-between;flex-wrap:wrap;margin-top:2px"><strong>漳州职业技术学院</strong> · 自动化（专科）<span style="color:var(--text2)">2021.09 — 2024.07</span></div>
-      </div>
-
-      <div style="margin-bottom:16px">
-        <div style="font-weight:700;font-size:14px;color:var(--accent);border-bottom:1.5px solid var(--accent-light);padding-bottom:4px;margin-bottom:10px">工作经历</div>
-        <div style="margin-bottom:8px">
-          <div style="display:flex;justify-content:space-between;flex-wrap:wrap"><strong>厦门新能安科技有限公司</strong> · 设备技术员<span style="color:var(--text2)">2026.01 — 2026.05</span></div>
-          <div style="color:var(--text2);font-size:12px;margin-bottom:6px">ATL 与宁德时代（CATL）合资的中高端锂电池制造商，专注储能、微型车、高功率消费电子三大赛道</div>
-          <ul style="padding-left:18px;color:var(--text2);font-size:12px;margin:0">
-            <li style="margin-bottom:3px">负责冷压机的日常调试与维护，保障产线设备稳定运行</li>
-            <li style="margin-bottom:3px">对接多类别供应商，完成设备上电安全检查及 3C 合规检查</li>
-            <li style="margin-bottom:3px">极片生产出现异常时，及时对冷压机进行参数调试与故障排除，确保生产顺利运行</li>
-          </ul>
-        </div>
-      </div>
-
-      <div style="margin-bottom:16px">
-        <div style="font-weight:700;font-size:14px;color:var(--accent);border-bottom:1.5px solid var(--accent-light);padding-bottom:4px;margin-bottom:10px">校园经历</div>
-        <div style="display:flex;justify-content:space-between;flex-wrap:wrap"><strong>班级班长</strong> / 学生会干事<span style="color:var(--text2)">2021 — 2024</span></div>
-        <div style="color:var(--text2);font-size:12px">组织班级活动，协调师生沟通，培养团队协作与执行力</div>
-      </div>
-
-      <div style="margin-bottom:8px">
-        <div style="font-weight:700;font-size:14px;color:var(--accent);border-bottom:1.5px solid var(--accent-light);padding-bottom:4px;margin-bottom:10px">技能</div>
-        <div style="display:flex;flex-wrap:wrap;gap:8px">
-          <span class="tag t-blue">Excel</span><span class="tag t-blue">SQL 基础</span><span class="tag t-blue">Python 基础</span><span class="tag" style="background:#f1f5f9;color:#64748b">C1 驾驶证</span>
-        </div>
-      </div>
-
-      <div style="color:var(--text2);font-size:12px;border-top:1px solid var(--border);padding-top:10px">
-        <strong style="color:var(--text)">自我评价：</strong>适应能力强，执行力高，有责任心。自动化专业背景 + 制造业设备调试经验，对数据分析方向有明确规划，正在系统学习 SQL、Python、BI 工具。
-      </div>
-    </div>
-  </div>
-
   <div class="card">
     <h3>完整时间线 · 含缓冲</h3>
     <div class="timeline">
@@ -391,6 +339,86 @@ footer{text-align:center;padding:24px;color:var(--text3);font-size:12px;border-t
       <tr><td>面试笔记</td><td>每次面试后记录问题和表现</td><td>每次面试后</td></tr>
       <tr><td>技能清单</td><td>维护「市场要求 vs 我已掌握」对照表</td><td>每两周更新</td></tr>
     </table></div>
+  </div>
+
+</div>
+
+<!-- ═══════ 我的简历 ═══════ -->
+<div class="tab-content" id="tab-content-resume">
+
+  <div class="card">
+    <h3>个人简历</h3>
+    <div style="font-size:13px;line-height:1.8">
+
+      <!-- 基础信息 -->
+      <div style="display:flex;justify-content:space-between;align-items:flex-start;flex-wrap:wrap;gap:12px;margin-bottom:16px">
+        <div>
+          <div style="font-size:20px;font-weight:700;color:var(--text);margin-bottom:6px">潘嘉毅</div>
+          <div style="color:var(--text2);line-height:1.8">
+            福建 · 23岁 · 男 · 共青团员<br>
+            159 8034 6056 · 2835977308@shturl
+          </div>
+        </div>
+        <div style="text-align:right">
+          <div style="color:var(--accent);font-weight:600">毕业院校：厦门大学嘉庚学院</div>
+          <div style="color:var(--text2)">自动化 · 本科 · 组织委员 / 宣传部干事</div>
+        </div>
+      </div>
+
+      <!-- 教育背景 -->
+      <div style="margin-bottom:16px">
+        <div style="font-weight:700;font-size:14px;color:var(--accent);border-bottom:1.5px solid var(--accent-light);padding-bottom:4px;margin-bottom:10px">教育背景</div>
+        <div style="display:flex;justify-content:space-between;flex-wrap:wrap"><strong>厦门大学嘉庚学院</strong> · 自动化（本科）</div>
+        <div style="color:var(--text2);font-size:12px;margin-top:4px;line-height:1.7">
+          主修课程：复变函数与积分变换、单片机原理、工程制图、大学英语、模拟电子技术、数字电子技术、程序设计基础（Python/C/C++）、电路分析、自动控制原理、电力电子技术、PLC编程与应用
+        </div>
+      </div>
+
+      <!-- 技能特长 -->
+      <div style="margin-bottom:16px">
+        <div style="font-weight:700;font-size:14px;color:var(--accent);border-bottom:1.5px solid var(--accent-light);padding-bottom:4px;margin-bottom:10px">技能特长</div>
+        <ul style="padding-left:18px;color:var(--text2);font-size:12px;margin:0;line-height:1.8">
+          <li><strong>技能证书：</strong>protel 计算机辅助设计</li>
+          <li><strong>新媒体运营：</strong>自主运营微信视频号成长类账号，3个月内实现粉丝从 0 到 5000+ 的增长，单条视频最高播放量达 20w+，熟悉短视频平台算法及内容运营策略；2022年12月获福建省信息素养大赛一等奖</li>
+          <li><strong>团队能力：</strong>具有丰富的团队组建与扩充经验和项目管理与协调经验</li>
+          <li><strong>计算机能力：</strong>熟练操作 Windows 平台上的各类应用软件，如 Word、Excel</li>
+        </ul>
+      </div>
+
+      <!-- 项目经历 -->
+      <div style="margin-bottom:16px">
+        <div style="font-weight:700;font-size:14px;color:var(--accent);border-bottom:1.5px solid var(--accent-light);padding-bottom:4px;margin-bottom:10px">项目经历</div>
+        <div style="margin-bottom:8px">
+          <div style="font-weight:700">基于 STM32 的智能烟雾报警器开发项目</div>
+          <ul style="padding-left:18px;color:var(--text2);font-size:12px;margin:6px 0 0 0;line-height:1.8">
+            <li><strong>需求导向选型：</strong>确定核心方案：选用 STM32F103 芯片（平衡引脚资源、功耗与成本），搭配 MQ-2 传感器（双监测烟雾+可燃气体）、高分贝蜂鸣器（适配嘈杂环境）及串口模块（保障数据稳定上传）</li>
+            <li><strong>设计与搭建落地：</strong>完成硬件原理图绘制、PCB 设计，同步推进元器件采购与焊接；主动排查虚焊、引脚错接问题，从源头保障硬件连接可靠性</li>
+            <li><strong>测试与功能验证：</strong>通过单模块测试（传感器信号、蜂鸣器响应、串口通信）与整体联调，实现烟雾采集、异常报警、数据上传三大功能无缝衔接，匹配场景使用需求</li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- 实习经历 -->
+      <div style="margin-bottom:16px">
+        <div style="font-weight:700;font-size:14px;color:var(--accent);border-bottom:1.5px solid var(--accent-light);padding-bottom:4px;margin-bottom:10px">实习经历</div>
+        <div>
+          <div style="display:flex;justify-content:space-between;flex-wrap:wrap"><strong>厦门世纪龙成贸易有限公司</strong> · 电商商品运营<span style="color:var(--text2)">2024.07 — 2024.09</span></div>
+          <ul style="padding-left:18px;color:var(--text2);font-size:12px;margin:6px 0 0 0;line-height:1.8">
+            <li><strong>竞品监测与策略分析：</strong>独立负责 23 个核心 SKU 的竞品全维度追踪，搭建「售价-优惠-销量」三维数据台账；通过周度动态监测沉淀竞品策略规律，输出 4 份专项分析报告，直接助力爆款商品点击率提升 15%</li>
+            <li><strong>商品体验优化：</strong>针对 SKU 规格标注混乱问题，主导输出《SKU 规格校验指南》；推动部门修正 5 处关键标注误差，因规格误差导致的退货纠纷，最终实现商品客诉率降低 30%</li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- 自我评价 -->
+      <div style="color:var(--text2);font-size:12px;border-top:1px solid var(--border);padding-top:10px;line-height:1.8">
+        <ul style="padding-left:18px;margin:0">
+          <li><strong>能力与成果：</strong>实习态度严谨，曾任学院宣传部干事，凭文字把控能力完成文档校对；熟练用 Office，独立撰写的汇报因逻辑清、数据准获认可</li>
+          <li><strong>主动价值：</strong>实习中主动观察业务，提分工优化建议，提升团队协作效率</li>
+          <li><strong>未来规划：</strong>计划参与多场景项目、强化实操，完善能力体系应对职场挑战</li>
+        </ul>
+      </div>
+    </div>
   </div>
 
 </div>
