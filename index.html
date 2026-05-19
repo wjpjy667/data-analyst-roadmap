@@ -112,6 +112,7 @@ footer{text-align:center;padding:24px;color:var(--text3);font-size:12px;border-t
       <button class="tab-btn" id="btn-market" onclick="switchTab('market')">市场洞察</button>
       <button class="tab-btn" id="btn-learn" onclick="switchTab('learn')">学习计划</button>
       <button class="tab-btn" id="btn-plan" onclick="switchTab('plan')">路线图</button>
+      <button class="tab-btn" id="btn-industry" onclick="switchTab('industry')">行业方向</button>
     </div>
   </div>
 </header>
@@ -410,6 +411,88 @@ footer{text-align:center;padding:24px;color:var(--text3);font-size:12px;border-t
       <tr><td>面试笔记</td><td>每次面试后记录问题和表现</td><td>每次面试后</td></tr>
       <tr><td>技能清单</td><td>维护「市场要求 vs 我已掌握」对照表</td><td>每两周更新</td></tr>
     </table></div>
+  </div>
+
+</div>
+
+<!-- ═══════ 行业方向 ═══════ -->
+<div class="tab-content" id="tab-content-industry">
+
+  <div class="card">
+    <h3>适合你的数据分析师方向</h3>
+    <p class="card-sub">基于你的专业背景、工作经历和技能储备，以下六个方向都可以切入</p>
+
+    <div style="margin-bottom:20px">
+      <div style="font-weight:700;font-size:14px;margin-bottom:8px;color:var(--accent)">🥇 制造业数据分析 · 最自然的过渡</div>
+      <div style="color:var(--text2);font-size:12px;line-height:1.8">
+        <strong>为什么适合：</strong>你在新能安做过设备技术员，对产线设备、生产流程、质量管控有第一手认知。制造业正在数字化转型，大量工厂需要数据分析师来优化良率、降低设备故障率、预测性维护。<br>
+        <strong>典型岗位：</strong>制造数据分析师、质量数据分析师、设备数据分析师<br>
+        <strong>代表企业：</strong>宁德时代、比亚迪、ATL、光伏/储能公司、传统制造数字化部门<br>
+        <strong>核心技能：</strong>SQL + Python + 可视化 + 了解MES/SCADA系统<br>
+        <strong>优势：</strong>你的产线经验是纯IT出身的数据分析师不具备的——你懂设备、懂工艺、懂现场
+      </div>
+    </div>
+
+    <div style="margin-bottom:20px">
+      <div style="font-weight:700;font-size:14px;margin-bottom:8px;color:var(--accent)">🥈 电商数据分析 · 杭州主场</div>
+      <div style="color:var(--text2);font-size:12px;line-height:1.8">
+        <strong>为什么适合：</strong>杭州是电商之都，岗位密度最大。你做过电商商品运营（竞品分析+数据台账），还有视频号运营的数据增长经验，这些都是电商数据分析的直接相关经验。<br>
+        <strong>典型岗位：</strong>电商数据分析师、商品运营数据分析、用户增长分析<br>
+        <strong>代表企业：</strong>淘宝/天猫生态公司、抖音电商、认养一头牛、新麦科技等杭州大量电商公司<br>
+        <strong>核心技能：</strong>SQL + Excel + BI工具 + 电商指标体系（GMV/UV/转化率/客单价）<br>
+        <strong>优势：</strong>有电商运营实操经验+竞品分析基础，比纯转行者更懂业务
+      </div>
+    </div>
+
+    <div style="margin-bottom:20px">
+      <div style="font-weight:700;font-size:14px;margin-bottom:8px;color:var(--accent)">🥉 新能源/储能数据分析 · 风口赛道</div>
+      <div style="color:var(--text2);font-size:12px;line-height:1.8">
+        <strong>为什么适合：</strong>你在锂电池制造商工作过，了解电池生产流程和行业术语。新能源是未来十年的确定性增长赛道，数据人才需求旺盛。<br>
+        <strong>典型岗位：</strong>电池数据分析师、储能运营数据分析、新能源产品质量分析<br>
+        <strong>代表企业：</strong>宁德时代、ATL、比亚迪、蜂巢能源、远景能源、海辰储能<br>
+        <strong>核心技能：</strong>SQL + Python + 数据分析 + 电池/电力基础知识<br>
+        <strong>优势：</strong>行业认知是壁垒——你已经在锂电池行业待过，知道极片、冷压、化成这些术语
+      </div>
+    </div>
+
+    <div style="margin-bottom:20px">
+      <div style="font-weight:700;font-size:14px;margin-bottom:8px;color:var(--text)">📱 IoT / 智能硬件数据分析</div>
+      <div style="color:var(--text2);font-size:12px;line-height:1.8">
+        <strong>为什么适合：</strong>你的STM32项目+自动化专业背景，对传感器数据采集、硬件通信协议有真实理解。IoT设备产生海量数据，需要既懂硬件又懂数据的人来分析。<br>
+        <strong>典型岗位：</strong>IoT数据分析师、智能硬件产品数据分析<br>
+        <strong>代表企业：</strong>小米生态链、涂鸦智能、海康威视、大华、宇树科技<br>
+        <strong>核心技能：</strong>SQL + Python + 时序数据分析 + 了解MQTT/物联网协议
+      </div>
+    </div>
+
+    <div style="margin-bottom:20px">
+      <div style="font-weight:700;font-size:14px;margin-bottom:8px;color:var(--text)">📊 供应链数据分析</div>
+      <div style="color:var(--text2);font-size:12px;line-height:1.8">
+        <strong>为什么适合：</strong>你在新能安对接过多类别供应商，做过设备安全检查。供应链数据分析需要理解采购、库存、物流环节——你有供应商管理的实际经验。<br>
+        <strong>典型岗位：</strong>供应链数据分析师、采购数据分析、物流数据分析<br>
+        <strong>代表企业：</strong>菜鸟、京东物流、制造业供应链部门、零售公司供应链<br>
+        <strong>核心技能：</strong>SQL + Excel + 供应链指标体系（库存周转/准时交付率/采购成本）
+      </div>
+    </div>
+
+    <div style="margin-bottom:8px">
+      <div style="font-weight:700;font-size:14px;margin-bottom:8px;color:var(--text)">🎬 内容/新媒体数据分析</div>
+      <div style="color:var(--text2);font-size:12px;line-height:1.8">
+        <strong>为什么适合：</strong>你运营过视频号并做到 5000+ 粉丝、20w+ 播放，对内容数据有真实体感。如果你对内容行业有兴趣，这是一个结合你数据能力+内容经验的独特方向。<br>
+        <strong>典型岗位：</strong>内容数据分析师、新媒体数据分析、创作者增长分析<br>
+        <strong>代表企业：</strong>字节跳动、B站、快手、小红书、MCN机构<br>
+        <strong>核心技能：</strong>SQL + Python + AB实验 + 用户行为分析
+      </div>
+    </div>
+  </div>
+
+  <div class="card">
+    <h3>建议的优先级策略</h3>
+    <div class="info">
+      <strong>第一阶段（入行）：</strong>主攻<strong>电商数据分析</strong>和<strong>制造业数据分析</strong>——这两个方向岗位最多、门槛最友好、你的经验最能直接转化。<br><br>
+      <strong>第二阶段（1-3年后）：</strong>有经验后，如果想追风口可以切<strong>新能源/储能数据分析</strong>，如果想走产品路线可以切<strong>IoT数据分析</strong>。<br><br>
+      <strong>投递策略：</strong>制造业数据分析的简历上突出新能安和STM32项目；电商数据分析的简历上突出视频号运营和世纪龙成经历——<strong>同一份经历，面向不同行业讲不同的故事。</strong>
+    </div>
   </div>
 
 </div>
